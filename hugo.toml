@@ -1,0 +1,94 @@
+baseURL = 'https://antholamalice.github.io'
+languageCode = 'en-be'
+title = 'AnthoLaMalice'
+theme = 'gokarna'
+
+
+# Automatically generate robots.txt
+enableRobotsTXT = false
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "<span data-feather='home'></span>"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "Whoami"
+
+    url = "/whoami/" 
+    pre = "<span data-feather='at-sign'></span>"
+    name = "Whoami"
+    weight = 2
+
+
+  [[menu.main]]
+ 
+    # Unique identifier for a menu item
+    identifier = "posts"
+    pre = "<span data-feather='book'></span>"
+    url = "/posts/"
+    
+    # You can add extra information before the name (HTML format is supported), such as icons
+    #pre = ""
+
+    # You can add extra information after the name (HTML format is supported), such as icons
+    #post = ""
+
+    # Display name
+    name = "Posts"
+
+    # Weights are used to determine the ordering
+    weight = 3
+
+
+ 
+
+
+    
+
+[params]
+  # URL for the avatar on homepage
+  avatarURL = "https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg"
+
+  # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
+  avatarSize = "size-l"
+
+  # Description to display on homepage
+  description = "Forensic/SOC Analyst - CTF Player"
+
+  # Accent color is displayed when you hover over <a> tags
+  accentColor = "#FF4D4D"
+
+  # Display "back to top" button on posts
+  ShowBackToTopButton = true
+
+  # You can use this to inject any HTML in the <head> tag.
+  # Ideal usecase for this is to import custom js/css or add your analytics snippet
+  customHeadHTML = ""
+
+  # Keywords relevant for SEO
+  metaKeywords = ["blog", "gokarna", "hugo", "dfir", "antholamalice", "cybersecurity", ]
+
+  # If you want to display posts on the homepage, the options are
+  # "popular" (order posts by weight), "recent" (order posts by date)
+  # or "" (do not display, default option)
+  showPostsOnHomePage = "recent"
+
+  # Footer text
+  footer = "AnthoLaMalice"
+  
+
+
+  socialIcons = [
+      {name = "root-me", url = "https://www.root-me.org/AnthoLaMalice"},
+      {name = "twitter", url = "https://x.com/antholamalice"},
+      {name = "github", url = "https://github.com/AnthoLaMalice"}
+    ]
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+    ordered = false

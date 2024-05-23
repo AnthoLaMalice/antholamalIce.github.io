@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>CVE-2023-4966 Citrix Bleed Analysis</title>
+    <meta name="description" content="Forensic/SOC Analyst - CTF Player">
+    <meta name="keywords" content='blog, gokarna, hugo, dfir, antholamalice, cybersecurity, CVE-2023-4966, DFIR, Citrix'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/citrixbleedanalysis/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CVE-2023-4966 Citrix Bleed Analysis">
+    <meta property="og:description" content="Forensic/SOC Analyst - CTF Player">
+    <meta property="og:image" content="https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg">
+    <meta property="og:image:secure_url" content="https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CVE-2023-4966 Citrix Bleed Analysis">
+    <meta name="twitter:description" content="Forensic/SOC Analyst - CTF Player">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/citrixbleedanalysis/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/citrixbleedanalysis/">
+    <meta name="twitter:image" content="https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/citrixbleedanalysis/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.42cd59fad5e45cfa0166df8a623922b01c15e00142e983fbc2d2d70da653b1d6.js" integrity="sha256-Qs1Z&#43;tXkXPoBZt&#43;KYjkisBwV4AFC6YP7wtLXDaZTsdY="></script>
+
+    
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://localhost:1313/">
+                <img src='https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">AnthoLaMalice</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/whoami/"><span data-feather='at-sign'></span> Whoami </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/whoami/"><span data-feather='at-sign'></span> Whoami </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>CVE-2023-4966 Citrix Bleed Analysis</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">December 15, 2023
+        
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/cve-2023-4966">CVE-2023-4966</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/dfir">DFIR</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/citrix">Citrix</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h1 id="introduction">Introduction</h1>
+<p>At the end of November 2023, I conducted a Forensic analysis in an environment which was completely encrypted by the Lockbit 3.0 ransomware. During the investigation, it was quickly possible to identify that Citrix components were the sources of most of the attacks.
+As many different <a href="https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/stopransomware-lockbit-3.0-ransomware-affiliates-exploit-cve-2023-4966-citrix-bleed-vulnerability">sources</a> report that Lockbit 3.0 likes to take advantage of the Citrix Bleed vulnerability (CVE 2023-4966), I decided to check whether it could be behind the attack, given that a Citrix NetScaler was facing the internet in the environment.</p>
+<h1 id="how-does-citrix-bleed-work">How does Citrix Bleed work?</h1>
+<p>As <a href="https://www.assetnote.io/resources/research/citrix-bleed-leaking-session-tokens-with-cve-2023-4966">Assetnote&rsquo;s excellent article</a> points out , the Citrix Bleed vulnerability occurs when sending a sufficiently long payload in the HTTP Host header to the vulnerable NetScaler instance. In this case, the server would respond with memory leaks including valid user cookies.
+Example from Assetnote:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> /oauth/idp/.well-known/openid-configuration <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">a &lt;repeated 24812 times&gt;</span>
+</span></span><span style="display:flex;"><span>Connection<span style="color:#f92672">:</span> <span style="color:#ae81ff">close</span>
+</span></span></code></pre></div><p>We can then see in the server response data that looks like user cookies.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span>X-Content-Type-Options<span style="color:#f92672">:</span> <span style="color:#ae81ff">nosniff</span>
+</span></span><span style="display:flex;"><span>X-XSS-Protection<span style="color:#f92672">:</span> <span style="color:#ae81ff">1; mode=block</span>
+</span></span><span style="display:flex;"><span>Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">147441</span>
+</span></span><span style="display:flex;"><span>Cache-control<span style="color:#f92672">:</span> <span style="color:#ae81ff">no-cache, no-store, must-revalidate</span>
+</span></span><span style="display:flex;"><span>Pragma<span style="color:#f92672">:</span> <span style="color:#ae81ff">no-cache</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">application/json; charset=utf-8</span>
+</span></span><span style="display:flex;"><span>X-Citrix-Application<span style="color:#f92672">:</span> <span style="color:#ae81ff">Receiver for Web</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#f92672">&#34;issuer&#34;</span>: <span style="color:#e6db74">&#34;https://aaaaa ...&lt;omitted&gt;... aaaaaaaaaaaaaaaaí§¡
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ð
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">í§¡-ª¼tÙÌåDx013.1.48.47à
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">d98cd79972b2637450836d4009793b100c3a01f2245525d5f4f58455e445a4a42HTTP/1.1 200 OK
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Content-Length: @@@@@
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Encode:@@@
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Cache-control: no-cache
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Pragma: no-cache
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Content-Type: text/html
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Set-Cookie: NSC_AAAC=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@;Secure;HttpOnly;Path=/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{&#34;</span><span style="color:#960050;background-color:#1e0010">categories</span><span style="color:#e6db74">&#34;:[],&#34;</span><span style="color:#960050;background-color:#1e0010">resources</span><span style="color:#e6db74">&#34;:[],&#34;</span><span style="color:#960050;background-color:#1e0010">subscriptionsEnabled</span><span style="color:#e6db74">&#34;:false,&#34;</span><span style="color:#960050;background-color:#1e0010">username</span><span style="color:#e6db74">&#34;:null}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">ð
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">å
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">å
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">PÏÏ
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">H¡
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">éÒÏ
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">eGÁ&#34;</span><span style="color:#960050;background-color:#1e0010">RDEFAULT</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">ò</span> <span style="color:#960050;background-color:#1e0010">#pack</span><span style="color:#ae81ff">200</span><span style="color:#960050;background-color:#1e0010">-gzip</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">compressdeflategzip</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">dentity</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">þÿÿÿÿÿ</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">©VPN_GLOBALÿÿÿÿÿÿ</span>   <span style="color:#960050;background-color:#1e0010">è&#34;AAA_PARAMí</span>
+</span></span></code></pre></div><p>Here is the cookie <code>d98cd79972b2637450836d4009793b100c3a01f2245525d5f4f58455e445a4a42</code>.</p>
+<p>Using this valid cookie, attackers can bypass password and MFA requirements, enabling them to take control of legitimate user sessions in the Citrix environment.</p>
+<h1 id="impacted-netscaler-versions">Impacted NetScaler versions</h1>
+<p>The following versions of NetScaler ADC and Gateway are vulnerable:</p>
+<ul>
+<li>NetScaler ADC and NetScaler Gateway 14.1 before 14.1-8.50</li>
+<li>NetScaler ADC and NetScaler Gateway 13.1 before 13.1-49.15</li>
+<li>NetScaler ADC and NetScaler Gateway 13.0 before 13.0-92.19</li>
+<li>NetScaler ADC and NetScaler Gateway version 12.1 (EOL)</li>
+<li>NetScaler ADC 13.1FIPS before 13.1-37.163</li>
+<li>NetScaler ADC 12.1-FIPS before 12.1-55.300</li>
+<li>NetScaler ADC 12.1-NDcPP before 12.1-55.300</li>
+</ul>
+<p>In the case of my analysis, the NetScaler appliance was indeed running a vulnerable version.</p>
+<h1 id="how-to-validate-whether-the-appliance-has-been-compromised">How to validate whether the appliance has been compromised?</h1>
+<p>I first started by trying to hunt for <a href="https://www.cyber.gov.au/about-us/view-all-content/alerts-and-advisories/stopransomware-lockbit-3.0-ransomware-affiliates-exploit-cve-2023-4966-citrix-bleed-vulnerability">known IoCs</a> for this attack on the vulnerable NetScaler.<br>
+In this case, no indicators of compromise were found. This may be explained by the fact that known IoCs were reported a long time ago, and that threat actors like to change their techniques and infrastructures to complicate the task of analysts.</p>
+<p>However, while examining the various resources available concerning known IoCs for this exploit, I came across this information from Citrix itself.
+<img src="../Citrixinfo.png" alt="Citrix Info"></p>
+<p>They report that in the NetScaler authentication logs of a compromised appliance, the value of the Client_Ip field may differ from the Source field.</p>
+<p>According to observations by Mandiant&rsquo;s CSIRT team and myself, the Client_Ip field corresponds to the IP address used for the original legitimate connection (i.e. the connection that generated the legitimate cookie), while the Source field actually indicates the IP from which the actual connection originated.
+This means two things, a user log showing a mismatch between the Source and the Client_Ip might either indicate a user who traveled and is working from a different location as when he generated his cookie or a hacked user.</p>
+<h1 id="analysis">Analysis</h1>
+<p>From my previous Incident Response cases involving Citrix and the NetScaler component, I knew that the authentication logs were located in <code>/var/log/ns.log*</code>.
+In order to be able to identify differences between Sources and Client_Ip, I decided to create a Python script to analyze the logs, extract all Client_Ip and Source values and then compare them to show any mismatch.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> glob
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> colorama <span style="color:#f92672">import</span> init, Fore
+</span></span><span style="display:flex;"><span>init(autoreset<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_ips</span>(log):
+</span></span><span style="display:flex;"><span>    client_ip_match <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;Client_ip (\d+\.\d+\.\d+\.\d+)&#39;</span>, log)
+</span></span><span style="display:flex;"><span>    source_ip_match <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;Source (\d+\.\d+\.\d+\.\d+)&#39;</span>, log)
+</span></span><span style="display:flex;"><span>    username_match <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;Context ([\w.]+)@&#39;</span>, log)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    client_ip <span style="color:#f92672">=</span> client_ip_match<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">if</span> client_ip_match <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    source_ip <span style="color:#f92672">=</span> source_ip_match<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">if</span> source_ip_match <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>    username <span style="color:#f92672">=</span> username_match<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">if</span> username_match <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> client_ip, source_ip, username
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>path <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Enter ns.log path. (Usually /var/log) : &#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>files_to_open <span style="color:#f92672">=</span> glob<span style="color:#f92672">.</span>glob(path <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/ns.log*&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>files_content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> files <span style="color:#f92672">in</span> files_to_open:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(files, <span style="color:#e6db74">&#39;r&#39;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>        content <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>        files_content <span style="color:#f92672">+=</span> content
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logs <span style="color:#f92672">=</span> files_content<span style="color:#f92672">.</span>splitlines()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> log <span style="color:#f92672">in</span> logs:
+</span></span><span style="display:flex;"><span>    client_ip, source_ip, username <span style="color:#f92672">=</span> extract_ips(log)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> client_ip <span style="color:#f92672">and</span> source_ip:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> client_ip <span style="color:#f92672">!=</span> source_ip:
+</span></span><span style="display:flex;"><span>            print(Fore<span style="color:#f92672">.</span>RED <span style="color:#f92672">+</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;IP mismatch showing potential exploitation of CitrixBleed (CVE-2023-4966) : Client_ip = </span><span style="color:#e6db74">{</span>client_ip<span style="color:#e6db74">}</span><span style="color:#e6db74">, Source = </span><span style="color:#e6db74">{</span>source_ip<span style="color:#e6db74">}</span><span style="color:#e6db74">, Username = </span><span style="color:#e6db74">{</span>username<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            print(Fore<span style="color:#f92672">.</span>BLUE <span style="color:#f92672">+</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Log : </span><span style="color:#e6db74">{</span>log<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><p>This script will go through the folder that you provide as an argument with the purpose of finding ns.log files inside it. Once these files are found, it will parse them to extract the Source and Client_Ip fields values as well as the username for every single log found, to identify the Patient Zero user.
+Once donce, it will display any mismatch found and the impacted user.</p>
+<h1 id="results">Results</h1>
+<p>By running this script in the context of the environment, I was quickly to find several mismatches showing connections from Russia, the USA and the Netherlands from the same user during the same evening, just before the attack began.</p>
+<p>In this case, it was not possible for the user to be, in the same evening, in all these countries.</p>
+<p>Here&rsquo;s a small sample of what was found:
+<img src="../CitrixBleedIoC.png" alt="CitrixBleed IoC"></p>
+<p>There, while the Client_Ip was the main public IP of the environment, the Source IP address was linked to Russia, which is not legitimate given the context of the infrastructure and the user.</p>
+<p>Further analysis of the user&rsquo;s actions revealed malicious activity on his account mostly coming from the russian IP address.</p>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="topFunction()" title="Go to top">
+        
+        <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+    </svg>
+    <script>
+        let backToTopButton = document.getElementById("btt-button");
+
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            smoothScrollToTop();
+        }
+
+        function smoothScrollToTop() {
+            const scrollToTop = () => {
+                const c = document.documentElement.scrollTop || document.body.scrollTop;
+                if (c > 0) {
+                    window.requestAnimationFrame(scrollToTop);
+                    window.scrollTo(0, c - c / 8);
+                }
+            };
+            scrollToTop();
+        }
+    </script>
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#how-does-citrix-bleed-work">How does Citrix Bleed work?</a></li>
+    <li><a href="#impacted-netscaler-versions">Impacted NetScaler versions</a></li>
+    <li><a href="#how-to-validate-whether-the-appliance-has-been-compromised">How to validate whether the appliance has been compromised?</a></li>
+    <li><a href="#analysis">Analysis</a></li>
+    <li><a href="#results">Results</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 AnthoLaMalice</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AnthoLaMalice</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on AnthoLaMalice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-be</language>
+    <lastBuildDate>Fri, 15 Dec 2023 23:39:49 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Whoami</title>
+      <link>http://localhost:1313/whoami/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/whoami/</guid>
+      <description>Hi guys, I&amp;rsquo;m AnthoLaMalice, a Belgian Forensic and SOC L2 analyst working at Easi. On the side, I like to play CTFs, especially on Root-Me.&#xA;I&amp;rsquo;m mainly interested in computer forensics and threat hunting. In my opinion, the most interesting thing about it is that you first need to be able to exploit a system and use the techniques of the Threat Actors to then be able to detect and protect against them.</description>
+    </item>
+    <item>
+      <title>CVE-2023-4966 Citrix Bleed Analysis</title>
+      <link>http://localhost:1313/posts/citrixbleedanalysis/</link>
+      <pubDate>Fri, 15 Dec 2023 23:39:49 +0530</pubDate>
+      <guid>http://localhost:1313/posts/citrixbleedanalysis/</guid>
+      <description>Introduction At the end of November 2023, I conducted a Forensic analysis in an environment which was completely encrypted by the Lockbit 3.0 ransomware. During the investigation, it was quickly possible to identify that Citrix components were the sources of most of the attacks. As many different sources report that Lockbit 3.0 likes to take advantage of the Citrix Bleed vulnerability (CVE 2023-4966), I decided to check whether it could be behind the attack, given that a Citrix NetScaler was facing the internet in the environment.</description>
+    </item>
+  </channel>
+</rss>

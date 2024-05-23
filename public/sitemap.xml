@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/whoami/</loc>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2023-12-15T23:39:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/citrix/</loc>
+    <lastmod>2023-12-15T23:39:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cve-2023-4966/</loc>
+    <lastmod>2023-12-15T23:39:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/citrixbleedanalysis/</loc>
+    <lastmod>2023-12-15T23:39:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dfir/</loc>
+    <lastmod>2023-12-15T23:39:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2023-12-15T23:39:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2023-12-15T23:39:49+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url>
+</urlset>

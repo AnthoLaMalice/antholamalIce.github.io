@@ -1,0 +1,6087 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Emoji Support</title>
+    <meta name="description" content="Guide to emoji usage in Hugo and DoIt.">
+    <meta name="keywords" content='blog, gokarna, hugo, emoji'>
+
+    <meta property="og:url" content="http://localhost:1313/whoami/whoami/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Emoji Support">
+    <meta property="og:description" content="Guide to emoji usage in Hugo and DoIt.">
+    <meta property="og:image" content="https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg">
+    <meta property="og:image:secure_url" content="https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Emoji Support">
+    <meta name="twitter:description" content="Guide to emoji usage in Hugo and DoIt.">
+    <meta property="twitter:domain" content="http://localhost:1313/whoami/whoami/">
+    <meta property="twitter:url" content="http://localhost:1313/whoami/whoami/">
+    <meta name="twitter:image" content="https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg">
+
+    
+    <link rel="canonical" href="http://localhost:1313/whoami/whoami/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.42cd59fad5e45cfa0166df8a623922b01c15e00142e983fbc2d2d70da653b1d6.js" integrity="sha256-Qs1Z&#43;tXkXPoBZt&#43;KYjkisBwV4AFC6YP7wtLXDaZTsdY="></script>
+
+    
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://localhost:1313/">
+                <img src='https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">AnthoLaMalice</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/whoami/"><span data-feather='at-sign'></span> Whoami </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/whoami/"><span data-feather='at-sign'></span> Whoami </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Emoji Support</h1>
+        <small role="doc-subtitle">Guide to emoji usage in Hugo and DoIt.</small>
+        <p class="post-date">October 1, 2020
+        
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/emoji">emoji</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>Emoji can be enabled in a Hugo project in a number of ways.</p>
+<p>The <a href="https://gohugo.io/functions/emojify/"><code>emojify</code></a> function can be called directly in templates or <a href="https://gohugo.io/templates/shortcode-templates#inline-shortcodes">Inline Shortcodes</a>.</p>
+<p>To enable emoji globally, set <code>enableEmoji</code> to <code>true</code> in your <a href="https://gohugo.io/getting-started/configuration/">site configuration</a> and then you can type emoji shorthand codes directly in content files.</p>
+<p>These begin and end with a <strong>colon</strong> and include the <strong>code</strong> of an emoji:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Gone camping! {?:}tent: Be back soon.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>That is so funny! {?:}joy:
+</span></span></code></pre></div><p>The rendered output looks like this:</p>
+<p>Gone camping! :tent: Be back soon.</p>
+<p>That is so funny! :joy:</p>
+<p>The following <strong>cheat sheet</strong> is a useful reference for emoji shorthand codes.</p>
+<h2 id="smileys--emotion">Smileys &amp; Emotion</h2>
+<h3 id="face-smiling">Face Smiling</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:grinning:</td>
+<td>grinning</td>
+<td style="text-align:center">:smiley:</td>
+<td>smiley</td>
+</tr>
+<tr>
+<td style="text-align:center">:smile:</td>
+<td>smile</td>
+<td style="text-align:center">:grin:</td>
+<td>grin</td>
+</tr>
+<tr>
+<td style="text-align:center">:laughing:</td>
+<td>laughing <!-- raw HTML omitted --> satisfied</td>
+<td style="text-align:center">:sweat_smile:</td>
+<td>sweat_smile</td>
+</tr>
+<tr>
+<td style="text-align:center">:rofl:</td>
+<td>rofl</td>
+<td style="text-align:center">:joy:</td>
+<td>joy</td>
+</tr>
+<tr>
+<td style="text-align:center">:slightly_smiling_face:</td>
+<td>slightly_smiling_face</td>
+<td style="text-align:center">:upside_down_face:</td>
+<td>upside_down_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:wink:</td>
+<td>wink</td>
+<td style="text-align:center">:blush:</td>
+<td>blush</td>
+</tr>
+<tr>
+<td style="text-align:center">:innocent:</td>
+<td>innocent</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-affection">Face Affection</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:heart_eyes:</td>
+<td>heart_eyes</td>
+<td style="text-align:center">:kissing_heart:</td>
+<td>kissing_heart</td>
+</tr>
+<tr>
+<td style="text-align:center">:kissing:</td>
+<td>kissing</td>
+<td style="text-align:center">:relaxed:</td>
+<td>relaxed</td>
+</tr>
+<tr>
+<td style="text-align:center">:kissing_closed_eyes:</td>
+<td>kissing_closed_eyes</td>
+<td style="text-align:center">:kissing_smiling_eyes:</td>
+<td>kissing_smiling_eyes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-tongue">Face Tongue</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:yum:</td>
+<td>yum</td>
+<td style="text-align:center">:stuck_out_tongue:</td>
+<td>stuck_out_tongue</td>
+</tr>
+<tr>
+<td style="text-align:center">:stuck_out_tongue_winking_eye:</td>
+<td>stuck_out_tongue_winking_eye</td>
+<td style="text-align:center">:stuck_out_tongue_closed_eyes:</td>
+<td>stuck_out_tongue_closed_eyes</td>
+</tr>
+<tr>
+<td style="text-align:center">:money_mouth_face:</td>
+<td>money_mouth_face</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-hand">Face Hand</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:hugs:</td>
+<td>hugs</td>
+<td style="text-align:center">:thinking:</td>
+<td>thinking</td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-neutral-skeptical">Face Neutral Skeptical</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:zipper_mouth_face:</td>
+<td>zipper_mouth_face</td>
+<td style="text-align:center">:neutral_face:</td>
+<td>neutral_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:expressionless:</td>
+<td>expressionless</td>
+<td style="text-align:center">:no_mouth:</td>
+<td>no_mouth</td>
+</tr>
+<tr>
+<td style="text-align:center">:smirk:</td>
+<td>smirk</td>
+<td style="text-align:center">:unamused:</td>
+<td>unamused</td>
+</tr>
+<tr>
+<td style="text-align:center">:roll_eyes:</td>
+<td>roll_eyes</td>
+<td style="text-align:center">:grimacing:</td>
+<td>grimacing</td>
+</tr>
+<tr>
+<td style="text-align:center">:lying_face:</td>
+<td>lying_face</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-sleepy">Face Sleepy</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:relieved:</td>
+<td>relieved</td>
+<td style="text-align:center">:pensive:</td>
+<td>pensive</td>
+</tr>
+<tr>
+<td style="text-align:center">:sleepy:</td>
+<td>sleepy</td>
+<td style="text-align:center">:drooling_face:</td>
+<td>drooling_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:sleeping:</td>
+<td>sleeping</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-unwell">Face Unwell</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:mask:</td>
+<td>mask</td>
+<td style="text-align:center">:face_with_thermometer:</td>
+<td>face_with_thermometer</td>
+</tr>
+<tr>
+<td style="text-align:center">:face_with_head_bandage:</td>
+<td>face_with_head_bandage</td>
+<td style="text-align:center">:nauseated_face:</td>
+<td>nauseated_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:sneezing_face:</td>
+<td>sneezing_face</td>
+<td style="text-align:center">:dizzy_face:</td>
+<td>dizzy_face</td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-hat">Face Hat</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:cowboy_hat_face:</td>
+<td>cowboy_hat_face</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-glasses">Face Glasses</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:sunglasses:</td>
+<td>sunglasses</td>
+<td style="text-align:center">:nerd_face:</td>
+<td>nerd_face</td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-concerned">Face Concerned</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:confused:</td>
+<td>confused</td>
+<td style="text-align:center">:worried:</td>
+<td>worried</td>
+</tr>
+<tr>
+<td style="text-align:center">:slightly_frowning_face:</td>
+<td>slightly_frowning_face</td>
+<td style="text-align:center">:frowning_face:</td>
+<td>frowning_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:open_mouth:</td>
+<td>open_mouth</td>
+<td style="text-align:center">:hushed:</td>
+<td>hushed</td>
+</tr>
+<tr>
+<td style="text-align:center">:astonished:</td>
+<td>astonished</td>
+<td style="text-align:center">:flushed:</td>
+<td>flushed</td>
+</tr>
+<tr>
+<td style="text-align:center">:frowning:</td>
+<td>frowning</td>
+<td style="text-align:center">:anguished:</td>
+<td>anguished</td>
+</tr>
+<tr>
+<td style="text-align:center">:fearful:</td>
+<td>fearful</td>
+<td style="text-align:center">:cold_sweat:</td>
+<td>cold_sweat</td>
+</tr>
+<tr>
+<td style="text-align:center">:disappointed_relieved:</td>
+<td>disappointed_relieved</td>
+<td style="text-align:center">:cry:</td>
+<td>cry</td>
+</tr>
+<tr>
+<td style="text-align:center">:sob:</td>
+<td>sob</td>
+<td style="text-align:center">:scream:</td>
+<td>scream</td>
+</tr>
+<tr>
+<td style="text-align:center">:confounded:</td>
+<td>confounded</td>
+<td style="text-align:center">:persevere:</td>
+<td>persevere</td>
+</tr>
+<tr>
+<td style="text-align:center">:disappointed:</td>
+<td>disappointed</td>
+<td style="text-align:center">:sweat:</td>
+<td>sweat</td>
+</tr>
+<tr>
+<td style="text-align:center">:weary:</td>
+<td>weary</td>
+<td style="text-align:center">:tired_face:</td>
+<td>tired_face</td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-negative">Face Negative</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:triumph:</td>
+<td>triumph</td>
+<td style="text-align:center">:pout:</td>
+<td>pout <!-- raw HTML omitted --> rage</td>
+</tr>
+<tr>
+<td style="text-align:center">:angry:</td>
+<td>angry</td>
+<td style="text-align:center">:smiling_imp:</td>
+<td>smiling_imp</td>
+</tr>
+<tr>
+<td style="text-align:center">:imp:</td>
+<td>imp</td>
+<td style="text-align:center">:skull:</td>
+<td>skull</td>
+</tr>
+<tr>
+<td style="text-align:center">:skull_and_crossbones:</td>
+<td>skull_and_crossbones</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="face-costume">Face Costume</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:hankey:</td>
+<td>hankey <!-- raw HTML omitted --> poop <!-- raw HTML omitted --> shit</td>
+<td style="text-align:center">:clown_face:</td>
+<td>clown_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:japanese_ogre:</td>
+<td>japanese_ogre</td>
+<td style="text-align:center">:japanese_goblin:</td>
+<td>japanese_goblin</td>
+</tr>
+<tr>
+<td style="text-align:center">:ghost:</td>
+<td>ghost</td>
+<td style="text-align:center">:alien:</td>
+<td>alien</td>
+</tr>
+<tr>
+<td style="text-align:center">:space_invader:</td>
+<td>space_invader</td>
+<td style="text-align:center">:robot:</td>
+<td>robot</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cat-face">Cat Face</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:smiley_cat:</td>
+<td>smiley_cat</td>
+<td style="text-align:center">:smile_cat:</td>
+<td>smile_cat</td>
+</tr>
+<tr>
+<td style="text-align:center">:joy_cat:</td>
+<td>joy_cat</td>
+<td style="text-align:center">:heart_eyes_cat:</td>
+<td>heart_eyes_cat</td>
+</tr>
+<tr>
+<td style="text-align:center">:smirk_cat:</td>
+<td>smirk_cat</td>
+<td style="text-align:center">:kissing_cat:</td>
+<td>kissing_cat</td>
+</tr>
+<tr>
+<td style="text-align:center">:scream_cat:</td>
+<td>scream_cat</td>
+<td style="text-align:center">:crying_cat_face:</td>
+<td>crying_cat_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:pouting_cat:</td>
+<td>pouting_cat</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="monkey-face">Monkey Face</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:see_no_evil:</td>
+<td>see_no_evil</td>
+<td style="text-align:center">:hear_no_evil:</td>
+<td>hear_no_evil</td>
+</tr>
+<tr>
+<td style="text-align:center">:speak_no_evil:</td>
+<td>speak_no_evil</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="emotion">Emotion</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:kiss:</td>
+<td>kiss</td>
+<td style="text-align:center">:love_letter:</td>
+<td>love_letter</td>
+</tr>
+<tr>
+<td style="text-align:center">:cupid:</td>
+<td>cupid</td>
+<td style="text-align:center">:gift_heart:</td>
+<td>gift_heart</td>
+</tr>
+<tr>
+<td style="text-align:center">:sparkling_heart:</td>
+<td>sparkling_heart</td>
+<td style="text-align:center">:heartpulse:</td>
+<td>heartpulse</td>
+</tr>
+<tr>
+<td style="text-align:center">:heartbeat:</td>
+<td>heartbeat</td>
+<td style="text-align:center">:revolving_hearts:</td>
+<td>revolving_hearts</td>
+</tr>
+<tr>
+<td style="text-align:center">:two_hearts:</td>
+<td>two_hearts</td>
+<td style="text-align:center">:heart_decoration:</td>
+<td>heart_decoration</td>
+</tr>
+<tr>
+<td style="text-align:center">:heavy_heart_exclamation:</td>
+<td>heavy_heart_exclamation</td>
+<td style="text-align:center">:broken_heart:</td>
+<td>broken_heart</td>
+</tr>
+<tr>
+<td style="text-align:center">:heart:</td>
+<td>heart</td>
+<td style="text-align:center">:yellow_heart:</td>
+<td>yellow_heart</td>
+</tr>
+<tr>
+<td style="text-align:center">:green_heart:</td>
+<td>green_heart</td>
+<td style="text-align:center">:blue_heart:</td>
+<td>blue_heart</td>
+</tr>
+<tr>
+<td style="text-align:center">:purple_heart:</td>
+<td>purple_heart</td>
+<td style="text-align:center">:black_heart:</td>
+<td>black_heart</td>
+</tr>
+<tr>
+<td style="text-align:center">:100:</td>
+<td>100</td>
+<td style="text-align:center">:anger:</td>
+<td>anger</td>
+</tr>
+<tr>
+<td style="text-align:center">:boom:</td>
+<td>boom <!-- raw HTML omitted --> collision</td>
+<td style="text-align:center">:dizzy:</td>
+<td>dizzy</td>
+</tr>
+<tr>
+<td style="text-align:center">:sweat_drops:</td>
+<td>sweat_drops</td>
+<td style="text-align:center">:dash:</td>
+<td>dash</td>
+</tr>
+<tr>
+<td style="text-align:center">:hole:</td>
+<td>hole</td>
+<td style="text-align:center">:bomb:</td>
+<td>bomb</td>
+</tr>
+<tr>
+<td style="text-align:center">:speech_balloon:</td>
+<td>speech_balloon</td>
+<td style="text-align:center">:eye_speech_bubble:</td>
+<td>eye_speech_bubble</td>
+</tr>
+<tr>
+<td style="text-align:center">:right_anger_bubble:</td>
+<td>right_anger_bubble</td>
+<td style="text-align:center">:thought_balloon:</td>
+<td>thought_balloon</td>
+</tr>
+<tr>
+<td style="text-align:center">:zzz:</td>
+<td>zzz</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="people--body">People &amp; Body</h2>
+<h3 id="hand-fingers-open">Hand Fingers Open</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:wave:</td>
+<td>wave</td>
+<td style="text-align:center">:raised_back_of_hand:</td>
+<td>raised_back_of_hand</td>
+</tr>
+<tr>
+<td style="text-align:center">:raised_hand_with_fingers_splayed:</td>
+<td>raised_hand_with_fingers_splayed</td>
+<td style="text-align:center">:hand:</td>
+<td>hand <!-- raw HTML omitted --> raised_hand</td>
+</tr>
+<tr>
+<td style="text-align:center">:vulcan_salute:</td>
+<td>vulcan_salute</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="hand-fingers-partial">Hand Fingers Partial</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:ok_hand:</td>
+<td>ok_hand</td>
+<td style="text-align:center">:v:</td>
+<td>v</td>
+</tr>
+<tr>
+<td style="text-align:center">:crossed_fingers:</td>
+<td>crossed_fingers</td>
+<td style="text-align:center">:metal:</td>
+<td>metal</td>
+</tr>
+<tr>
+<td style="text-align:center">:call_me_hand:</td>
+<td>call_me_hand</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="hand-single-finger">Hand Single Finger</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:point_left:</td>
+<td>point_left</td>
+<td style="text-align:center">:point_right:</td>
+<td>point_right</td>
+</tr>
+<tr>
+<td style="text-align:center">:point_up_2:</td>
+<td>point_up_2</td>
+<td style="text-align:center">:fu:</td>
+<td>fu <!-- raw HTML omitted --> middle_finger</td>
+</tr>
+<tr>
+<td style="text-align:center">:point_down:</td>
+<td>point_down</td>
+<td style="text-align:center">:point_up:</td>
+<td>point_up</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hand-fingers-closed">Hand Fingers Closed</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:+1:</td>
+<td>+1 <!-- raw HTML omitted --> thumbsup</td>
+<td style="text-align:center">:-1:</td>
+<td>-1 <!-- raw HTML omitted --> thumbsdown</td>
+</tr>
+<tr>
+<td style="text-align:center">:fist:</td>
+<td>fist <!-- raw HTML omitted --> fist_raised</td>
+<td style="text-align:center">:facepunch:</td>
+<td>facepunch <!-- raw HTML omitted --> fist_oncoming <!-- raw HTML omitted --> punch</td>
+</tr>
+<tr>
+<td style="text-align:center">:fist_left:</td>
+<td>fist_left</td>
+<td style="text-align:center">:fist_right:</td>
+<td>fist_right</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hands">Hands</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:clap:</td>
+<td>clap</td>
+<td style="text-align:center">:raised_hands:</td>
+<td>raised_hands</td>
+</tr>
+<tr>
+<td style="text-align:center">:open_hands:</td>
+<td>open_hands</td>
+<td style="text-align:center">:handshake:</td>
+<td>handshake</td>
+</tr>
+<tr>
+<td style="text-align:center">:pray:</td>
+<td>pray</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="hand-prop">Hand Prop</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:writing_hand:</td>
+<td>writing_hand</td>
+<td style="text-align:center">:nail_care:</td>
+<td>nail_care</td>
+</tr>
+<tr>
+<td style="text-align:center">:selfie:</td>
+<td>selfie</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="body-parts">Body Parts</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:muscle:</td>
+<td>muscle</td>
+<td style="text-align:center">:ear:</td>
+<td>ear</td>
+</tr>
+<tr>
+<td style="text-align:center">:nose:</td>
+<td>nose</td>
+<td style="text-align:center">:eyes:</td>
+<td>eyes</td>
+</tr>
+<tr>
+<td style="text-align:center">:eye:</td>
+<td>eye</td>
+<td style="text-align:center">:tongue:</td>
+<td>tongue</td>
+</tr>
+<tr>
+<td style="text-align:center">:lips:</td>
+<td>lips</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="person">Person</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:baby:</td>
+<td>baby</td>
+<td style="text-align:center">:boy:</td>
+<td>boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:girl:</td>
+<td>girl</td>
+<td style="text-align:center">:blonde_man:</td>
+<td>blonde_man <!-- raw HTML omitted --> person_with_blond_hair</td>
+</tr>
+<tr>
+<td style="text-align:center">:man:</td>
+<td>man</td>
+<td style="text-align:center">:woman:</td>
+<td>woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:blonde_woman:</td>
+<td>blonde_woman</td>
+<td style="text-align:center">:older_man:</td>
+<td>older_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:older_woman:</td>
+<td>older_woman</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="person-gesture">Person Gesture</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:frowning_woman:</td>
+<td>frowning_woman <!-- raw HTML omitted --> person_frowning</td>
+<td style="text-align:center">:frowning_man:</td>
+<td>frowning_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:person_with_pouting_face:</td>
+<td>person_with_pouting_face <!-- raw HTML omitted --> pouting_woman</td>
+<td style="text-align:center">:pouting_man:</td>
+<td>pouting_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:ng_woman:</td>
+<td>ng_woman <!-- raw HTML omitted --> no_good <!-- raw HTML omitted --> no_good_woman</td>
+<td style="text-align:center">:ng_man:</td>
+<td>ng_man <!-- raw HTML omitted --> no_good_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:ok_woman:</td>
+<td>ok_woman</td>
+<td style="text-align:center">:ok_man:</td>
+<td>ok_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:information_desk_person:</td>
+<td>information_desk_person <!-- raw HTML omitted --> sassy_woman <!-- raw HTML omitted --> tipping_hand_woman</td>
+<td style="text-align:center">:sassy_man:</td>
+<td>sassy_man <!-- raw HTML omitted --> tipping_hand_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:raising_hand:</td>
+<td>raising_hand <!-- raw HTML omitted --> raising_hand_woman</td>
+<td style="text-align:center">:raising_hand_man:</td>
+<td>raising_hand_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:bow:</td>
+<td>bow <!-- raw HTML omitted --> bowing_man</td>
+<td style="text-align:center">:bowing_woman:</td>
+<td>bowing_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_facepalming:</td>
+<td>man_facepalming</td>
+<td style="text-align:center">:woman_facepalming:</td>
+<td>woman_facepalming</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_shrugging:</td>
+<td>man_shrugging</td>
+<td style="text-align:center">:woman_shrugging:</td>
+<td>woman_shrugging</td>
+</tr>
+</tbody>
+</table>
+<h3 id="person-role">Person Role</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:man_health_worker:</td>
+<td>man_health_worker</td>
+<td style="text-align:center">:woman_health_worker:</td>
+<td>woman_health_worker</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_student:</td>
+<td>man_student</td>
+<td style="text-align:center">:woman_student:</td>
+<td>woman_student</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_teacher:</td>
+<td>man_teacher</td>
+<td style="text-align:center">:woman_teacher:</td>
+<td>woman_teacher</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_judge:</td>
+<td>man_judge</td>
+<td style="text-align:center">:woman_judge:</td>
+<td>woman_judge</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_farmer:</td>
+<td>man_farmer</td>
+<td style="text-align:center">:woman_farmer:</td>
+<td>woman_farmer</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_cook:</td>
+<td>man_cook</td>
+<td style="text-align:center">:woman_cook:</td>
+<td>woman_cook</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_mechanic:</td>
+<td>man_mechanic</td>
+<td style="text-align:center">:woman_mechanic:</td>
+<td>woman_mechanic</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_factory_worker:</td>
+<td>man_factory_worker</td>
+<td style="text-align:center">:woman_factory_worker:</td>
+<td>woman_factory_worker</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_office_worker:</td>
+<td>man_office_worker</td>
+<td style="text-align:center">:woman_office_worker:</td>
+<td>woman_office_worker</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_scientist:</td>
+<td>man_scientist</td>
+<td style="text-align:center">:woman_scientist:</td>
+<td>woman_scientist</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_technologist:</td>
+<td>man_technologist</td>
+<td style="text-align:center">:woman_technologist:</td>
+<td>woman_technologist</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_singer:</td>
+<td>man_singer</td>
+<td style="text-align:center">:woman_singer:</td>
+<td>woman_singer</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_artist:</td>
+<td>man_artist</td>
+<td style="text-align:center">:woman_artist:</td>
+<td>woman_artist</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_pilot:</td>
+<td>man_pilot</td>
+<td style="text-align:center">:woman_pilot:</td>
+<td>woman_pilot</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_astronaut:</td>
+<td>man_astronaut</td>
+<td style="text-align:center">:woman_astronaut:</td>
+<td>woman_astronaut</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_firefighter:</td>
+<td>man_firefighter</td>
+<td style="text-align:center">:woman_firefighter:</td>
+<td>woman_firefighter</td>
+</tr>
+<tr>
+<td style="text-align:center">:cop:</td>
+<td>cop <!-- raw HTML omitted --> policeman</td>
+<td style="text-align:center">:policewoman:</td>
+<td>policewoman</td>
+</tr>
+<tr>
+<td style="text-align:center">:detective:</td>
+<td>detective <!-- raw HTML omitted --> male_detective</td>
+<td style="text-align:center">:female_detective:</td>
+<td>female_detective</td>
+</tr>
+<tr>
+<td style="text-align:center">:guardsman:</td>
+<td>guardsman</td>
+<td style="text-align:center">:guardswoman:</td>
+<td>guardswoman</td>
+</tr>
+<tr>
+<td style="text-align:center">:construction_worker:</td>
+<td>construction_worker <!-- raw HTML omitted --> construction_worker_man</td>
+<td style="text-align:center">:construction_worker_woman:</td>
+<td>construction_worker_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:prince:</td>
+<td>prince</td>
+<td style="text-align:center">:princess:</td>
+<td>princess</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_with_turban:</td>
+<td>man_with_turban</td>
+<td style="text-align:center">:woman_with_turban:</td>
+<td>woman_with_turban</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_with_gua_pi_mao:</td>
+<td>man_with_gua_pi_mao</td>
+<td style="text-align:center">:man_in_tuxedo:</td>
+<td>man_in_tuxedo</td>
+</tr>
+<tr>
+<td style="text-align:center">:bride_with_veil:</td>
+<td>bride_with_veil</td>
+<td style="text-align:center">:pregnant_woman:</td>
+<td>pregnant_woman</td>
+</tr>
+</tbody>
+</table>
+<h3 id="person-fantasy">Person Fantasy</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:angel:</td>
+<td>angel</td>
+<td style="text-align:center">:santa:</td>
+<td>santa</td>
+</tr>
+<tr>
+<td style="text-align:center">:mrs_claus:</td>
+<td>mrs_claus</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="person-activity">Person Activity</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:massage:</td>
+<td>massage <!-- raw HTML omitted --> massage_woman</td>
+<td style="text-align:center">:massage_man:</td>
+<td>massage_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:haircut:</td>
+<td>haircut <!-- raw HTML omitted --> haircut_woman</td>
+<td style="text-align:center">:haircut_man:</td>
+<td>haircut_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:walking:</td>
+<td>walking <!-- raw HTML omitted --> walking_man</td>
+<td style="text-align:center">:walking_woman:</td>
+<td>walking_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:runner:</td>
+<td>runner <!-- raw HTML omitted --> running <!-- raw HTML omitted --> running_man</td>
+<td style="text-align:center">:running_woman:</td>
+<td>running_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:dancer:</td>
+<td>dancer</td>
+<td style="text-align:center">:man_dancing:</td>
+<td>man_dancing</td>
+</tr>
+<tr>
+<td style="text-align:center">:business_suit_levitating:</td>
+<td>business_suit_levitating</td>
+<td style="text-align:center">:dancers:</td>
+<td>dancers <!-- raw HTML omitted --> dancing_women</td>
+</tr>
+<tr>
+<td style="text-align:center">:dancing_men:</td>
+<td>dancing_men</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="person-sport">Person Sport</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:person_fencing:</td>
+<td>person_fencing</td>
+<td style="text-align:center">:horse_racing:</td>
+<td>horse_racing</td>
+</tr>
+<tr>
+<td style="text-align:center">:skier:</td>
+<td>skier</td>
+<td style="text-align:center">:snowboarder:</td>
+<td>snowboarder</td>
+</tr>
+<tr>
+<td style="text-align:center">:golfing_man:</td>
+<td>golfing_man</td>
+<td style="text-align:center">:golfing_woman:</td>
+<td>golfing_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:surfer:</td>
+<td>surfer <!-- raw HTML omitted --> surfing_man</td>
+<td style="text-align:center">:surfing_woman:</td>
+<td>surfing_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:rowboat:</td>
+<td>rowboat <!-- raw HTML omitted --> rowing_man</td>
+<td style="text-align:center">:rowing_woman:</td>
+<td>rowing_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:swimmer:</td>
+<td>swimmer <!-- raw HTML omitted --> swimming_man</td>
+<td style="text-align:center">:swimming_woman:</td>
+<td>swimming_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:basketball_man:</td>
+<td>basketball_man</td>
+<td style="text-align:center">:basketball_woman:</td>
+<td>basketball_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:weight_lifting_man:</td>
+<td>weight_lifting_man</td>
+<td style="text-align:center">:weight_lifting_woman:</td>
+<td>weight_lifting_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:bicyclist:</td>
+<td>bicyclist <!-- raw HTML omitted --> biking_man</td>
+<td style="text-align:center">:biking_woman:</td>
+<td>biking_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:mountain_bicyclist:</td>
+<td>mountain_bicyclist <!-- raw HTML omitted --> mountain_biking_man</td>
+<td style="text-align:center">:mountain_biking_woman:</td>
+<td>mountain_biking_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_cartwheeling:</td>
+<td>man_cartwheeling</td>
+<td style="text-align:center">:woman_cartwheeling:</td>
+<td>woman_cartwheeling</td>
+</tr>
+<tr>
+<td style="text-align:center">:men_wrestling:</td>
+<td>men_wrestling</td>
+<td style="text-align:center">:women_wrestling:</td>
+<td>women_wrestling</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_playing_water_polo:</td>
+<td>man_playing_water_polo</td>
+<td style="text-align:center">:woman_playing_water_polo:</td>
+<td>woman_playing_water_polo</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_playing_handball:</td>
+<td>man_playing_handball</td>
+<td style="text-align:center">:woman_playing_handball:</td>
+<td>woman_playing_handball</td>
+</tr>
+<tr>
+<td style="text-align:center">:man_juggling:</td>
+<td>man_juggling</td>
+<td style="text-align:center">:woman_juggling:</td>
+<td>woman_juggling</td>
+</tr>
+</tbody>
+</table>
+<h3 id="person-resting">Person Resting</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:bath:</td>
+<td>bath</td>
+<td style="text-align:center">:sleeping_bed:</td>
+<td>sleeping_bed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="family">Family</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:two_women_holding_hands:</td>
+<td>two_women_holding_hands</td>
+<td style="text-align:center">:couple:</td>
+<td>couple</td>
+</tr>
+<tr>
+<td style="text-align:center">:two_men_holding_hands:</td>
+<td>two_men_holding_hands</td>
+<td style="text-align:center">:couplekiss_man_woman:</td>
+<td>couplekiss_man_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:couplekiss_man_man:</td>
+<td>couplekiss_man_man</td>
+<td style="text-align:center">:couplekiss_woman_woman:</td>
+<td>couplekiss_woman_woman</td>
+</tr>
+<tr>
+<td style="text-align:center">:couple_with_heart:</td>
+<td>couple_with_heart <!-- raw HTML omitted --> couple_with_heart_woman_man</td>
+<td style="text-align:center">:couple_with_heart_man_man:</td>
+<td>couple_with_heart_man_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:couple_with_heart_woman_woman:</td>
+<td>couple_with_heart_woman_woman</td>
+<td style="text-align:center">:family:</td>
+<td>family <!-- raw HTML omitted --> family_man_woman_boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_man_woman_girl:</td>
+<td>family_man_woman_girl</td>
+<td style="text-align:center">:family_man_woman_girl_boy:</td>
+<td>family_man_woman_girl_boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_man_woman_boy_boy:</td>
+<td>family_man_woman_boy_boy</td>
+<td style="text-align:center">:family_man_woman_girl_girl:</td>
+<td>family_man_woman_girl_girl</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_man_man_boy:</td>
+<td>family_man_man_boy</td>
+<td style="text-align:center">:family_man_man_girl:</td>
+<td>family_man_man_girl</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_man_man_girl_boy:</td>
+<td>family_man_man_girl_boy</td>
+<td style="text-align:center">:family_man_man_boy_boy:</td>
+<td>family_man_man_boy_boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_man_man_girl_girl:</td>
+<td>family_man_man_girl_girl</td>
+<td style="text-align:center">:family_woman_woman_boy:</td>
+<td>family_woman_woman_boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_woman_woman_girl:</td>
+<td>family_woman_woman_girl</td>
+<td style="text-align:center">:family_woman_woman_girl_boy:</td>
+<td>family_woman_woman_girl_boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_woman_woman_boy_boy:</td>
+<td>family_woman_woman_boy_boy</td>
+<td style="text-align:center">:family_woman_woman_girl_girl:</td>
+<td>family_woman_woman_girl_girl</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_man_boy:</td>
+<td>family_man_boy</td>
+<td style="text-align:center">:family_man_boy_boy:</td>
+<td>family_man_boy_boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_man_girl:</td>
+<td>family_man_girl</td>
+<td style="text-align:center">:family_man_girl_boy:</td>
+<td>family_man_girl_boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_man_girl_girl:</td>
+<td>family_man_girl_girl</td>
+<td style="text-align:center">:family_woman_boy:</td>
+<td>family_woman_boy</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_woman_boy_boy:</td>
+<td>family_woman_boy_boy</td>
+<td style="text-align:center">:family_woman_girl:</td>
+<td>family_woman_girl</td>
+</tr>
+<tr>
+<td style="text-align:center">:family_woman_girl_boy:</td>
+<td>family_woman_girl_boy</td>
+<td style="text-align:center">:family_woman_girl_girl:</td>
+<td>family_woman_girl_girl</td>
+</tr>
+</tbody>
+</table>
+<h3 id="person-symbol">Person Symbol</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:speaking_head:</td>
+<td>speaking_head</td>
+<td style="text-align:center">:bust_in_silhouette:</td>
+<td>bust_in_silhouette</td>
+</tr>
+<tr>
+<td style="text-align:center">:busts_in_silhouette:</td>
+<td>busts_in_silhouette</td>
+<td style="text-align:center">:footprints:</td>
+<td>footprints</td>
+</tr>
+</tbody>
+</table>
+<h2 id="animals--nature">Animals &amp; Nature</h2>
+<h3 id="animal-mammal">Animal Mammal</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:monkey_face:</td>
+<td>monkey_face</td>
+<td style="text-align:center">:monkey:</td>
+<td>monkey</td>
+</tr>
+<tr>
+<td style="text-align:center">:gorilla:</td>
+<td>gorilla</td>
+<td style="text-align:center">:dog:</td>
+<td>dog</td>
+</tr>
+<tr>
+<td style="text-align:center">:dog2:</td>
+<td>dog2</td>
+<td style="text-align:center">:poodle:</td>
+<td>poodle</td>
+</tr>
+<tr>
+<td style="text-align:center">:wolf:</td>
+<td>wolf</td>
+<td style="text-align:center">:fox_face:</td>
+<td>fox_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:cat:</td>
+<td>cat</td>
+<td style="text-align:center">:cat2:</td>
+<td>cat2</td>
+</tr>
+<tr>
+<td style="text-align:center">:lion:</td>
+<td>lion</td>
+<td style="text-align:center">:tiger:</td>
+<td>tiger</td>
+</tr>
+<tr>
+<td style="text-align:center">:tiger2:</td>
+<td>tiger2</td>
+<td style="text-align:center">:leopard:</td>
+<td>leopard</td>
+</tr>
+<tr>
+<td style="text-align:center">:horse:</td>
+<td>horse</td>
+<td style="text-align:center">:racehorse:</td>
+<td>racehorse</td>
+</tr>
+<tr>
+<td style="text-align:center">:unicorn:</td>
+<td>unicorn</td>
+<td style="text-align:center">:deer:</td>
+<td>deer</td>
+</tr>
+<tr>
+<td style="text-align:center">:cow:</td>
+<td>cow</td>
+<td style="text-align:center">:ox:</td>
+<td>ox</td>
+</tr>
+<tr>
+<td style="text-align:center">:water_buffalo:</td>
+<td>water_buffalo</td>
+<td style="text-align:center">:cow2:</td>
+<td>cow2</td>
+</tr>
+<tr>
+<td style="text-align:center">:pig:</td>
+<td>pig</td>
+<td style="text-align:center">:pig2:</td>
+<td>pig2</td>
+</tr>
+<tr>
+<td style="text-align:center">:boar:</td>
+<td>boar</td>
+<td style="text-align:center">:pig_nose:</td>
+<td>pig_nose</td>
+</tr>
+<tr>
+<td style="text-align:center">:ram:</td>
+<td>ram</td>
+<td style="text-align:center">:sheep:</td>
+<td>sheep</td>
+</tr>
+<tr>
+<td style="text-align:center">:goat:</td>
+<td>goat</td>
+<td style="text-align:center">:dromedary_camel:</td>
+<td>dromedary_camel</td>
+</tr>
+<tr>
+<td style="text-align:center">:camel:</td>
+<td>camel</td>
+<td style="text-align:center">:elephant:</td>
+<td>elephant</td>
+</tr>
+<tr>
+<td style="text-align:center">:rhinoceros:</td>
+<td>rhinoceros</td>
+<td style="text-align:center">:mouse:</td>
+<td>mouse</td>
+</tr>
+<tr>
+<td style="text-align:center">:mouse2:</td>
+<td>mouse2</td>
+<td style="text-align:center">:rat:</td>
+<td>rat</td>
+</tr>
+<tr>
+<td style="text-align:center">:hamster:</td>
+<td>hamster</td>
+<td style="text-align:center">:rabbit:</td>
+<td>rabbit</td>
+</tr>
+<tr>
+<td style="text-align:center">:rabbit2:</td>
+<td>rabbit2</td>
+<td style="text-align:center">:chipmunk:</td>
+<td>chipmunk</td>
+</tr>
+<tr>
+<td style="text-align:center">:bat:</td>
+<td>bat</td>
+<td style="text-align:center">:bear:</td>
+<td>bear</td>
+</tr>
+<tr>
+<td style="text-align:center">:koala:</td>
+<td>koala</td>
+<td style="text-align:center">:panda_face:</td>
+<td>panda_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:feet:</td>
+<td>feet <!-- raw HTML omitted --> paw_prints</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="animal-bird">Animal Bird</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:turkey:</td>
+<td>turkey</td>
+<td style="text-align:center">:chicken:</td>
+<td>chicken</td>
+</tr>
+<tr>
+<td style="text-align:center">:rooster:</td>
+<td>rooster</td>
+<td style="text-align:center">:hatching_chick:</td>
+<td>hatching_chick</td>
+</tr>
+<tr>
+<td style="text-align:center">:baby_chick:</td>
+<td>baby_chick</td>
+<td style="text-align:center">:hatched_chick:</td>
+<td>hatched_chick</td>
+</tr>
+<tr>
+<td style="text-align:center">:bird:</td>
+<td>bird</td>
+<td style="text-align:center">:penguin:</td>
+<td>penguin</td>
+</tr>
+<tr>
+<td style="text-align:center">:dove:</td>
+<td>dove</td>
+<td style="text-align:center">:eagle:</td>
+<td>eagle</td>
+</tr>
+<tr>
+<td style="text-align:center">:duck:</td>
+<td>duck</td>
+<td style="text-align:center">:owl:</td>
+<td>owl</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animal-amphibian">Animal Amphibian</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:frog:</td>
+<td>frog</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="animal-reptile">Animal Reptile</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:crocodile:</td>
+<td>crocodile</td>
+<td style="text-align:center">:turtle:</td>
+<td>turtle</td>
+</tr>
+<tr>
+<td style="text-align:center">:lizard:</td>
+<td>lizard</td>
+<td style="text-align:center">:snake:</td>
+<td>snake</td>
+</tr>
+<tr>
+<td style="text-align:center">:dragon_face:</td>
+<td>dragon_face</td>
+<td style="text-align:center">:dragon:</td>
+<td>dragon</td>
+</tr>
+</tbody>
+</table>
+<h3 id="animal-marine">Animal Marine</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:whale:</td>
+<td>whale</td>
+<td style="text-align:center">:whale2:</td>
+<td>whale2</td>
+</tr>
+<tr>
+<td style="text-align:center">:dolphin:</td>
+<td>dolphin <!-- raw HTML omitted --> flipper</td>
+<td style="text-align:center">:fish:</td>
+<td>fish</td>
+</tr>
+<tr>
+<td style="text-align:center">:tropical_fish:</td>
+<td>tropical_fish</td>
+<td style="text-align:center">:blowfish:</td>
+<td>blowfish</td>
+</tr>
+<tr>
+<td style="text-align:center">:shark:</td>
+<td>shark</td>
+<td style="text-align:center">:octopus:</td>
+<td>octopus</td>
+</tr>
+<tr>
+<td style="text-align:center">:shell:</td>
+<td>shell</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="animal-bug">Animal Bug</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:snail:</td>
+<td>snail</td>
+<td style="text-align:center">:butterfly:</td>
+<td>butterfly</td>
+</tr>
+<tr>
+<td style="text-align:center">:bug:</td>
+<td>bug</td>
+<td style="text-align:center">:ant:</td>
+<td>ant</td>
+</tr>
+<tr>
+<td style="text-align:center">:bee:</td>
+<td>bee <!-- raw HTML omitted --> honeybee</td>
+<td style="text-align:center">:beetle:</td>
+<td>beetle</td>
+</tr>
+<tr>
+<td style="text-align:center">:spider:</td>
+<td>spider</td>
+<td style="text-align:center">:spider_web:</td>
+<td>spider_web</td>
+</tr>
+<tr>
+<td style="text-align:center">:scorpion:</td>
+<td>scorpion</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="plant-flower">Plant Flower</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:bouquet:</td>
+<td>bouquet</td>
+<td style="text-align:center">:cherry_blossom:</td>
+<td>cherry_blossom</td>
+</tr>
+<tr>
+<td style="text-align:center">:white_flower:</td>
+<td>white_flower</td>
+<td style="text-align:center">:rosette:</td>
+<td>rosette</td>
+</tr>
+<tr>
+<td style="text-align:center">:rose:</td>
+<td>rose</td>
+<td style="text-align:center">:wilted_flower:</td>
+<td>wilted_flower</td>
+</tr>
+<tr>
+<td style="text-align:center">:hibiscus:</td>
+<td>hibiscus</td>
+<td style="text-align:center">:sunflower:</td>
+<td>sunflower</td>
+</tr>
+<tr>
+<td style="text-align:center">:blossom:</td>
+<td>blossom</td>
+<td style="text-align:center">:tulip:</td>
+<td>tulip</td>
+</tr>
+</tbody>
+</table>
+<h3 id="plant-other">Plant Other</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:seedling:</td>
+<td>seedling</td>
+<td style="text-align:center">:evergreen_tree:</td>
+<td>evergreen_tree</td>
+</tr>
+<tr>
+<td style="text-align:center">:deciduous_tree:</td>
+<td>deciduous_tree</td>
+<td style="text-align:center">:palm_tree:</td>
+<td>palm_tree</td>
+</tr>
+<tr>
+<td style="text-align:center">:cactus:</td>
+<td>cactus</td>
+<td style="text-align:center">:ear_of_rice:</td>
+<td>ear_of_rice</td>
+</tr>
+<tr>
+<td style="text-align:center">:herb:</td>
+<td>herb</td>
+<td style="text-align:center">:shamrock:</td>
+<td>shamrock</td>
+</tr>
+<tr>
+<td style="text-align:center">:four_leaf_clover:</td>
+<td>four_leaf_clover</td>
+<td style="text-align:center">:maple_leaf:</td>
+<td>maple_leaf</td>
+</tr>
+<tr>
+<td style="text-align:center">:fallen_leaf:</td>
+<td>fallen_leaf</td>
+<td style="text-align:center">:leaves:</td>
+<td>leaves</td>
+</tr>
+</tbody>
+</table>
+<h2 id="food--drink">Food &amp; Drink</h2>
+<h3 id="food-fruit">Food Fruit</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:grapes:</td>
+<td>grapes</td>
+<td style="text-align:center">:melon:</td>
+<td>melon</td>
+</tr>
+<tr>
+<td style="text-align:center">:watermelon:</td>
+<td>watermelon</td>
+<td style="text-align:center">:mandarin:</td>
+<td>mandarin <!-- raw HTML omitted --> orange <!-- raw HTML omitted --> tangerine</td>
+</tr>
+<tr>
+<td style="text-align:center">:lemon:</td>
+<td>lemon</td>
+<td style="text-align:center">:banana:</td>
+<td>banana</td>
+</tr>
+<tr>
+<td style="text-align:center">:pineapple:</td>
+<td>pineapple</td>
+<td style="text-align:center">:apple:</td>
+<td>apple</td>
+</tr>
+<tr>
+<td style="text-align:center">:green_apple:</td>
+<td>green_apple</td>
+<td style="text-align:center">:pear:</td>
+<td>pear</td>
+</tr>
+<tr>
+<td style="text-align:center">:peach:</td>
+<td>peach</td>
+<td style="text-align:center">:cherries:</td>
+<td>cherries</td>
+</tr>
+<tr>
+<td style="text-align:center">:strawberry:</td>
+<td>strawberry</td>
+<td style="text-align:center">:kiwi_fruit:</td>
+<td>kiwi_fruit</td>
+</tr>
+<tr>
+<td style="text-align:center">:tomato:</td>
+<td>tomato</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="food-vegetable">Food Vegetable</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:avocado:</td>
+<td>avocado</td>
+<td style="text-align:center">:eggplant:</td>
+<td>eggplant</td>
+</tr>
+<tr>
+<td style="text-align:center">:potato:</td>
+<td>potato</td>
+<td style="text-align:center">:carrot:</td>
+<td>carrot</td>
+</tr>
+<tr>
+<td style="text-align:center">:corn:</td>
+<td>corn</td>
+<td style="text-align:center">:hot_pepper:</td>
+<td>hot_pepper</td>
+</tr>
+<tr>
+<td style="text-align:center">:cucumber:</td>
+<td>cucumber</td>
+<td style="text-align:center">:mushroom:</td>
+<td>mushroom</td>
+</tr>
+<tr>
+<td style="text-align:center">:peanuts:</td>
+<td>peanuts</td>
+<td style="text-align:center">:chestnut:</td>
+<td>chestnut</td>
+</tr>
+</tbody>
+</table>
+<h3 id="food-prepared">Food Prepared</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:bread:</td>
+<td>bread</td>
+<td style="text-align:center">:croissant:</td>
+<td>croissant</td>
+</tr>
+<tr>
+<td style="text-align:center">:baguette_bread:</td>
+<td>baguette_bread</td>
+<td style="text-align:center">:pancakes:</td>
+<td>pancakes</td>
+</tr>
+<tr>
+<td style="text-align:center">:cheese:</td>
+<td>cheese</td>
+<td style="text-align:center">:meat_on_bone:</td>
+<td>meat_on_bone</td>
+</tr>
+<tr>
+<td style="text-align:center">:poultry_leg:</td>
+<td>poultry_leg</td>
+<td style="text-align:center">:bacon:</td>
+<td>bacon</td>
+</tr>
+<tr>
+<td style="text-align:center">:hamburger:</td>
+<td>hamburger</td>
+<td style="text-align:center">:fries:</td>
+<td>fries</td>
+</tr>
+<tr>
+<td style="text-align:center">:pizza:</td>
+<td>pizza</td>
+<td style="text-align:center">:hotdog:</td>
+<td>hotdog</td>
+</tr>
+<tr>
+<td style="text-align:center">:taco:</td>
+<td>taco</td>
+<td style="text-align:center">:burrito:</td>
+<td>burrito</td>
+</tr>
+<tr>
+<td style="text-align:center">:stuffed_flatbread:</td>
+<td>stuffed_flatbread</td>
+<td style="text-align:center">:egg:</td>
+<td>egg</td>
+</tr>
+<tr>
+<td style="text-align:center">:fried_egg:</td>
+<td>fried_egg</td>
+<td style="text-align:center">:shallow_pan_of_food:</td>
+<td>shallow_pan_of_food</td>
+</tr>
+<tr>
+<td style="text-align:center">:stew:</td>
+<td>stew</td>
+<td style="text-align:center">:green_salad:</td>
+<td>green_salad</td>
+</tr>
+<tr>
+<td style="text-align:center">:popcorn:</td>
+<td>popcorn</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="food-asian">Food Asian</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:bento:</td>
+<td>bento</td>
+<td style="text-align:center">:rice_cracker:</td>
+<td>rice_cracker</td>
+</tr>
+<tr>
+<td style="text-align:center">:rice_ball:</td>
+<td>rice_ball</td>
+<td style="text-align:center">:rice:</td>
+<td>rice</td>
+</tr>
+<tr>
+<td style="text-align:center">:curry:</td>
+<td>curry</td>
+<td style="text-align:center">:ramen:</td>
+<td>ramen</td>
+</tr>
+<tr>
+<td style="text-align:center">:spaghetti:</td>
+<td>spaghetti</td>
+<td style="text-align:center">:sweet_potato:</td>
+<td>sweet_potato</td>
+</tr>
+<tr>
+<td style="text-align:center">:oden:</td>
+<td>oden</td>
+<td style="text-align:center">:sushi:</td>
+<td>sushi</td>
+</tr>
+<tr>
+<td style="text-align:center">:fried_shrimp:</td>
+<td>fried_shrimp</td>
+<td style="text-align:center">:fish_cake:</td>
+<td>fish_cake</td>
+</tr>
+<tr>
+<td style="text-align:center">:dango:</td>
+<td>dango</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="food-marine">Food Marine</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:crab:</td>
+<td>crab</td>
+<td style="text-align:center">:shrimp:</td>
+<td>shrimp</td>
+</tr>
+<tr>
+<td style="text-align:center">:squid:</td>
+<td>squid</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="food-sweet">Food Sweet</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:icecream:</td>
+<td>icecream</td>
+<td style="text-align:center">:shaved_ice:</td>
+<td>shaved_ice</td>
+</tr>
+<tr>
+<td style="text-align:center">:ice_cream:</td>
+<td>ice_cream</td>
+<td style="text-align:center">:doughnut:</td>
+<td>doughnut</td>
+</tr>
+<tr>
+<td style="text-align:center">:cookie:</td>
+<td>cookie</td>
+<td style="text-align:center">:birthday:</td>
+<td>birthday</td>
+</tr>
+<tr>
+<td style="text-align:center">:cake:</td>
+<td>cake</td>
+<td style="text-align:center">:chocolate_bar:</td>
+<td>chocolate_bar</td>
+</tr>
+<tr>
+<td style="text-align:center">:candy:</td>
+<td>candy</td>
+<td style="text-align:center">:lollipop:</td>
+<td>lollipop</td>
+</tr>
+<tr>
+<td style="text-align:center">:custard:</td>
+<td>custard</td>
+<td style="text-align:center">:honey_pot:</td>
+<td>honey_pot</td>
+</tr>
+</tbody>
+</table>
+<h3 id="drink">Drink</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:baby_bottle:</td>
+<td>baby_bottle</td>
+<td style="text-align:center">:milk_glass:</td>
+<td>milk_glass</td>
+</tr>
+<tr>
+<td style="text-align:center">:coffee:</td>
+<td>coffee</td>
+<td style="text-align:center">:tea:</td>
+<td>tea</td>
+</tr>
+<tr>
+<td style="text-align:center">:sake:</td>
+<td>sake</td>
+<td style="text-align:center">:champagne:</td>
+<td>champagne</td>
+</tr>
+<tr>
+<td style="text-align:center">:wine_glass:</td>
+<td>wine_glass</td>
+<td style="text-align:center">:cocktail:</td>
+<td>cocktail</td>
+</tr>
+<tr>
+<td style="text-align:center">:tropical_drink:</td>
+<td>tropical_drink</td>
+<td style="text-align:center">:beer:</td>
+<td>beer</td>
+</tr>
+<tr>
+<td style="text-align:center">:beers:</td>
+<td>beers</td>
+<td style="text-align:center">:clinking_glasses:</td>
+<td>clinking_glasses</td>
+</tr>
+<tr>
+<td style="text-align:center">:tumbler_glass:</td>
+<td>tumbler_glass</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dishware">Dishware</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:plate_with_cutlery:</td>
+<td>plate_with_cutlery</td>
+<td style="text-align:center">:fork_and_knife:</td>
+<td>fork_and_knife</td>
+</tr>
+<tr>
+<td style="text-align:center">:spoon:</td>
+<td>spoon</td>
+<td style="text-align:center">:hocho:</td>
+<td>hocho <!-- raw HTML omitted --> knife</td>
+</tr>
+<tr>
+<td style="text-align:center">:amphora:</td>
+<td>amphora</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="travel--places">Travel &amp; Places</h2>
+<h3 id="place-map">Place Map</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:earth_africa:</td>
+<td>earth_africa</td>
+<td style="text-align:center">:earth_americas:</td>
+<td>earth_americas</td>
+</tr>
+<tr>
+<td style="text-align:center">:earth_asia:</td>
+<td>earth_asia</td>
+<td style="text-align:center">:globe_with_meridians:</td>
+<td>globe_with_meridians</td>
+</tr>
+<tr>
+<td style="text-align:center">:world_map:</td>
+<td>world_map</td>
+<td style="text-align:center">:japan:</td>
+<td>japan</td>
+</tr>
+</tbody>
+</table>
+<h3 id="place-geographic">Place Geographic</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:mountain_snow:</td>
+<td>mountain_snow</td>
+<td style="text-align:center">:mountain:</td>
+<td>mountain</td>
+</tr>
+<tr>
+<td style="text-align:center">:volcano:</td>
+<td>volcano</td>
+<td style="text-align:center">:mount_fuji:</td>
+<td>mount_fuji</td>
+</tr>
+<tr>
+<td style="text-align:center">:camping:</td>
+<td>camping</td>
+<td style="text-align:center">:beach_umbrella:</td>
+<td>beach_umbrella</td>
+</tr>
+<tr>
+<td style="text-align:center">:desert:</td>
+<td>desert</td>
+<td style="text-align:center">:desert_island:</td>
+<td>desert_island</td>
+</tr>
+<tr>
+<td style="text-align:center">:national_park:</td>
+<td>national_park</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="place-building">Place Building</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:stadium:</td>
+<td>stadium</td>
+<td style="text-align:center">:classical_building:</td>
+<td>classical_building</td>
+</tr>
+<tr>
+<td style="text-align:center">:building_construction:</td>
+<td>building_construction</td>
+<td style="text-align:center">:houses:</td>
+<td>houses</td>
+</tr>
+<tr>
+<td style="text-align:center">:derelict_house:</td>
+<td>derelict_house</td>
+<td style="text-align:center">:house:</td>
+<td>house</td>
+</tr>
+<tr>
+<td style="text-align:center">:house_with_garden:</td>
+<td>house_with_garden</td>
+<td style="text-align:center">:office:</td>
+<td>office</td>
+</tr>
+<tr>
+<td style="text-align:center">:post_office:</td>
+<td>post_office</td>
+<td style="text-align:center">:european_post_office:</td>
+<td>european_post_office</td>
+</tr>
+<tr>
+<td style="text-align:center">:hospital:</td>
+<td>hospital</td>
+<td style="text-align:center">:bank:</td>
+<td>bank</td>
+</tr>
+<tr>
+<td style="text-align:center">:hotel:</td>
+<td>hotel</td>
+<td style="text-align:center">:love_hotel:</td>
+<td>love_hotel</td>
+</tr>
+<tr>
+<td style="text-align:center">:convenience_store:</td>
+<td>convenience_store</td>
+<td style="text-align:center">:school:</td>
+<td>school</td>
+</tr>
+<tr>
+<td style="text-align:center">:department_store:</td>
+<td>department_store</td>
+<td style="text-align:center">:factory:</td>
+<td>factory</td>
+</tr>
+<tr>
+<td style="text-align:center">:japanese_castle:</td>
+<td>japanese_castle</td>
+<td style="text-align:center">:european_castle:</td>
+<td>european_castle</td>
+</tr>
+<tr>
+<td style="text-align:center">:wedding:</td>
+<td>wedding</td>
+<td style="text-align:center">:tokyo_tower:</td>
+<td>tokyo_tower</td>
+</tr>
+<tr>
+<td style="text-align:center">:statue_of_liberty:</td>
+<td>statue_of_liberty</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="place-religious">Place Religious</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:church:</td>
+<td>church</td>
+<td style="text-align:center">:mosque:</td>
+<td>mosque</td>
+</tr>
+<tr>
+<td style="text-align:center">:synagogue:</td>
+<td>synagogue</td>
+<td style="text-align:center">:shinto_shrine:</td>
+<td>shinto_shrine</td>
+</tr>
+<tr>
+<td style="text-align:center">:kaaba:</td>
+<td>kaaba</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="place-other">Place Other</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:fountain:</td>
+<td>fountain</td>
+<td style="text-align:center">:tent:</td>
+<td>tent</td>
+</tr>
+<tr>
+<td style="text-align:center">:foggy:</td>
+<td>foggy</td>
+<td style="text-align:center">:night_with_stars:</td>
+<td>night_with_stars</td>
+</tr>
+<tr>
+<td style="text-align:center">:cityscape:</td>
+<td>cityscape</td>
+<td style="text-align:center">:sunrise_over_mountains:</td>
+<td>sunrise_over_mountains</td>
+</tr>
+<tr>
+<td style="text-align:center">:sunrise:</td>
+<td>sunrise</td>
+<td style="text-align:center">:city_sunset:</td>
+<td>city_sunset</td>
+</tr>
+<tr>
+<td style="text-align:center">:city_sunrise:</td>
+<td>city_sunrise</td>
+<td style="text-align:center">:bridge_at_night:</td>
+<td>bridge_at_night</td>
+</tr>
+<tr>
+<td style="text-align:center">:hotsprings:</td>
+<td>hotsprings</td>
+<td style="text-align:center">:carousel_horse:</td>
+<td>carousel_horse</td>
+</tr>
+<tr>
+<td style="text-align:center">:ferris_wheel:</td>
+<td>ferris_wheel</td>
+<td style="text-align:center">:roller_coaster:</td>
+<td>roller_coaster</td>
+</tr>
+<tr>
+<td style="text-align:center">:barber:</td>
+<td>barber</td>
+<td style="text-align:center">:circus_tent:</td>
+<td>circus_tent</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transport-ground">Transport Ground</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:steam_locomotive:</td>
+<td>steam_locomotive</td>
+<td style="text-align:center">:railway_car:</td>
+<td>railway_car</td>
+</tr>
+<tr>
+<td style="text-align:center">:bullettrain_side:</td>
+<td>bullettrain_side</td>
+<td style="text-align:center">:bullettrain_front:</td>
+<td>bullettrain_front</td>
+</tr>
+<tr>
+<td style="text-align:center">:train2:</td>
+<td>train2</td>
+<td style="text-align:center">:metro:</td>
+<td>metro</td>
+</tr>
+<tr>
+<td style="text-align:center">:light_rail:</td>
+<td>light_rail</td>
+<td style="text-align:center">:station:</td>
+<td>station</td>
+</tr>
+<tr>
+<td style="text-align:center">:tram:</td>
+<td>tram</td>
+<td style="text-align:center">:monorail:</td>
+<td>monorail</td>
+</tr>
+<tr>
+<td style="text-align:center">:mountain_railway:</td>
+<td>mountain_railway</td>
+<td style="text-align:center">:train:</td>
+<td>train</td>
+</tr>
+<tr>
+<td style="text-align:center">:bus:</td>
+<td>bus</td>
+<td style="text-align:center">:oncoming_bus:</td>
+<td>oncoming_bus</td>
+</tr>
+<tr>
+<td style="text-align:center">:trolleybus:</td>
+<td>trolleybus</td>
+<td style="text-align:center">:minibus:</td>
+<td>minibus</td>
+</tr>
+<tr>
+<td style="text-align:center">:ambulance:</td>
+<td>ambulance</td>
+<td style="text-align:center">:fire_engine:</td>
+<td>fire_engine</td>
+</tr>
+<tr>
+<td style="text-align:center">:police_car:</td>
+<td>police_car</td>
+<td style="text-align:center">:oncoming_police_car:</td>
+<td>oncoming_police_car</td>
+</tr>
+<tr>
+<td style="text-align:center">:taxi:</td>
+<td>taxi</td>
+<td style="text-align:center">:oncoming_taxi:</td>
+<td>oncoming_taxi</td>
+</tr>
+<tr>
+<td style="text-align:center">:car:</td>
+<td>car <!-- raw HTML omitted --> red_car</td>
+<td style="text-align:center">:oncoming_automobile:</td>
+<td>oncoming_automobile</td>
+</tr>
+<tr>
+<td style="text-align:center">:blue_car:</td>
+<td>blue_car</td>
+<td style="text-align:center">:truck:</td>
+<td>truck</td>
+</tr>
+<tr>
+<td style="text-align:center">:articulated_lorry:</td>
+<td>articulated_lorry</td>
+<td style="text-align:center">:tractor:</td>
+<td>tractor</td>
+</tr>
+<tr>
+<td style="text-align:center">:racing_car:</td>
+<td>racing_car</td>
+<td style="text-align:center">:motorcycle:</td>
+<td>motorcycle</td>
+</tr>
+<tr>
+<td style="text-align:center">:motor_scooter:</td>
+<td>motor_scooter</td>
+<td style="text-align:center">:bike:</td>
+<td>bike</td>
+</tr>
+<tr>
+<td style="text-align:center">:kick_scooter:</td>
+<td>kick_scooter</td>
+<td style="text-align:center">:busstop:</td>
+<td>busstop</td>
+</tr>
+<tr>
+<td style="text-align:center">:motorway:</td>
+<td>motorway</td>
+<td style="text-align:center">:railway_track:</td>
+<td>railway_track</td>
+</tr>
+<tr>
+<td style="text-align:center">:oil_drum:</td>
+<td>oil_drum</td>
+<td style="text-align:center">:fuelpump:</td>
+<td>fuelpump</td>
+</tr>
+<tr>
+<td style="text-align:center">:rotating_light:</td>
+<td>rotating_light</td>
+<td style="text-align:center">:traffic_light:</td>
+<td>traffic_light</td>
+</tr>
+<tr>
+<td style="text-align:center">:vertical_traffic_light:</td>
+<td>vertical_traffic_light</td>
+<td style="text-align:center">:stop_sign:</td>
+<td>stop_sign</td>
+</tr>
+<tr>
+<td style="text-align:center">:construction:</td>
+<td>construction</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="transport-water">Transport Water</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:anchor:</td>
+<td>anchor</td>
+<td style="text-align:center">:boat:</td>
+<td>boat <!-- raw HTML omitted --> sailboat</td>
+</tr>
+<tr>
+<td style="text-align:center">:canoe:</td>
+<td>canoe</td>
+<td style="text-align:center">:speedboat:</td>
+<td>speedboat</td>
+</tr>
+<tr>
+<td style="text-align:center">:passenger_ship:</td>
+<td>passenger_ship</td>
+<td style="text-align:center">:ferry:</td>
+<td>ferry</td>
+</tr>
+<tr>
+<td style="text-align:center">:motor_boat:</td>
+<td>motor_boat</td>
+<td style="text-align:center">:ship:</td>
+<td>ship</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transport-air">Transport Air</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:airplane:</td>
+<td>airplane</td>
+<td style="text-align:center">:small_airplane:</td>
+<td>small_airplane</td>
+</tr>
+<tr>
+<td style="text-align:center">:flight_departure:</td>
+<td>flight_departure</td>
+<td style="text-align:center">:flight_arrival:</td>
+<td>flight_arrival</td>
+</tr>
+<tr>
+<td style="text-align:center">:seat:</td>
+<td>seat</td>
+<td style="text-align:center">:helicopter:</td>
+<td>helicopter</td>
+</tr>
+<tr>
+<td style="text-align:center">:suspension_railway:</td>
+<td>suspension_railway</td>
+<td style="text-align:center">:mountain_cableway:</td>
+<td>mountain_cableway</td>
+</tr>
+<tr>
+<td style="text-align:center">:aerial_tramway:</td>
+<td>aerial_tramway</td>
+<td style="text-align:center">:artificial_satellite:</td>
+<td>artificial_satellite</td>
+</tr>
+<tr>
+<td style="text-align:center">:rocket:</td>
+<td>rocket</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="hotel">Hotel</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:bellhop_bell:</td>
+<td>bellhop_bell</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="time">Time</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:hourglass:</td>
+<td>hourglass</td>
+<td style="text-align:center">:hourglass_flowing_sand:</td>
+<td>hourglass_flowing_sand</td>
+</tr>
+<tr>
+<td style="text-align:center">:watch:</td>
+<td>watch</td>
+<td style="text-align:center">:alarm_clock:</td>
+<td>alarm_clock</td>
+</tr>
+<tr>
+<td style="text-align:center">:stopwatch:</td>
+<td>stopwatch</td>
+<td style="text-align:center">:timer_clock:</td>
+<td>timer_clock</td>
+</tr>
+<tr>
+<td style="text-align:center">:mantelpiece_clock:</td>
+<td>mantelpiece_clock</td>
+<td style="text-align:center">:clock12:</td>
+<td>clock12</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock1230:</td>
+<td>clock1230</td>
+<td style="text-align:center">:clock1:</td>
+<td>clock1</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock130:</td>
+<td>clock130</td>
+<td style="text-align:center">:clock2:</td>
+<td>clock2</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock230:</td>
+<td>clock230</td>
+<td style="text-align:center">:clock3:</td>
+<td>clock3</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock330:</td>
+<td>clock330</td>
+<td style="text-align:center">:clock4:</td>
+<td>clock4</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock430:</td>
+<td>clock430</td>
+<td style="text-align:center">:clock5:</td>
+<td>clock5</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock530:</td>
+<td>clock530</td>
+<td style="text-align:center">:clock6:</td>
+<td>clock6</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock630:</td>
+<td>clock630</td>
+<td style="text-align:center">:clock7:</td>
+<td>clock7</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock730:</td>
+<td>clock730</td>
+<td style="text-align:center">:clock8:</td>
+<td>clock8</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock830:</td>
+<td>clock830</td>
+<td style="text-align:center">:clock9:</td>
+<td>clock9</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock930:</td>
+<td>clock930</td>
+<td style="text-align:center">:clock10:</td>
+<td>clock10</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock1030:</td>
+<td>clock1030</td>
+<td style="text-align:center">:clock11:</td>
+<td>clock11</td>
+</tr>
+<tr>
+<td style="text-align:center">:clock1130:</td>
+<td>clock1130</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sky--weather">Sky &amp; Weather</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:new_moon:</td>
+<td>new_moon</td>
+<td style="text-align:center">:waxing_crescent_moon:</td>
+<td>waxing_crescent_moon</td>
+</tr>
+<tr>
+<td style="text-align:center">:first_quarter_moon:</td>
+<td>first_quarter_moon</td>
+<td style="text-align:center">:moon:</td>
+<td>moon <!-- raw HTML omitted --> waxing_gibbous_moon</td>
+</tr>
+<tr>
+<td style="text-align:center">:full_moon:</td>
+<td>full_moon</td>
+<td style="text-align:center">:waning_gibbous_moon:</td>
+<td>waning_gibbous_moon</td>
+</tr>
+<tr>
+<td style="text-align:center">:last_quarter_moon:</td>
+<td>last_quarter_moon</td>
+<td style="text-align:center">:waning_crescent_moon:</td>
+<td>waning_crescent_moon</td>
+</tr>
+<tr>
+<td style="text-align:center">:crescent_moon:</td>
+<td>crescent_moon</td>
+<td style="text-align:center">:new_moon_with_face:</td>
+<td>new_moon_with_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:first_quarter_moon_with_face:</td>
+<td>first_quarter_moon_with_face</td>
+<td style="text-align:center">:last_quarter_moon_with_face:</td>
+<td>last_quarter_moon_with_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:thermometer:</td>
+<td>thermometer</td>
+<td style="text-align:center">:sunny:</td>
+<td>sunny</td>
+</tr>
+<tr>
+<td style="text-align:center">:full_moon_with_face:</td>
+<td>full_moon_with_face</td>
+<td style="text-align:center">:sun_with_face:</td>
+<td>sun_with_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:star:</td>
+<td>star</td>
+<td style="text-align:center">:star2:</td>
+<td>star2</td>
+</tr>
+<tr>
+<td style="text-align:center">:stars:</td>
+<td>stars</td>
+<td style="text-align:center">:milky_way:</td>
+<td>milky_way</td>
+</tr>
+<tr>
+<td style="text-align:center">:cloud:</td>
+<td>cloud</td>
+<td style="text-align:center">:partly_sunny:</td>
+<td>partly_sunny</td>
+</tr>
+<tr>
+<td style="text-align:center">:cloud_with_lightning_and_rain:</td>
+<td>cloud_with_lightning_and_rain</td>
+<td style="text-align:center">:sun_behind_small_cloud:</td>
+<td>sun_behind_small_cloud</td>
+</tr>
+<tr>
+<td style="text-align:center">:sun_behind_large_cloud:</td>
+<td>sun_behind_large_cloud</td>
+<td style="text-align:center">:sun_behind_rain_cloud:</td>
+<td>sun_behind_rain_cloud</td>
+</tr>
+<tr>
+<td style="text-align:center">:cloud_with_rain:</td>
+<td>cloud_with_rain</td>
+<td style="text-align:center">:cloud_with_snow:</td>
+<td>cloud_with_snow</td>
+</tr>
+<tr>
+<td style="text-align:center">:cloud_with_lightning:</td>
+<td>cloud_with_lightning</td>
+<td style="text-align:center">:tornado:</td>
+<td>tornado</td>
+</tr>
+<tr>
+<td style="text-align:center">:fog:</td>
+<td>fog</td>
+<td style="text-align:center">:wind_face:</td>
+<td>wind_face</td>
+</tr>
+<tr>
+<td style="text-align:center">:cyclone:</td>
+<td>cyclone</td>
+<td style="text-align:center">:rainbow:</td>
+<td>rainbow</td>
+</tr>
+<tr>
+<td style="text-align:center">:closed_umbrella:</td>
+<td>closed_umbrella</td>
+<td style="text-align:center">:open_umbrella:</td>
+<td>open_umbrella</td>
+</tr>
+<tr>
+<td style="text-align:center">:umbrella:</td>
+<td>umbrella</td>
+<td style="text-align:center">:parasol_on_ground:</td>
+<td>parasol_on_ground</td>
+</tr>
+<tr>
+<td style="text-align:center">:zap:</td>
+<td>zap</td>
+<td style="text-align:center">:snowflake:</td>
+<td>snowflake</td>
+</tr>
+<tr>
+<td style="text-align:center">:snowman_with_snow:</td>
+<td>snowman_with_snow</td>
+<td style="text-align:center">:snowman:</td>
+<td>snowman</td>
+</tr>
+<tr>
+<td style="text-align:center">:comet:</td>
+<td>comet</td>
+<td style="text-align:center">:fire:</td>
+<td>fire</td>
+</tr>
+<tr>
+<td style="text-align:center">:droplet:</td>
+<td>droplet</td>
+<td style="text-align:center">:ocean:</td>
+<td>ocean</td>
+</tr>
+</tbody>
+</table>
+<h2 id="activities">Activities</h2>
+<h3 id="event">Event</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:jack_o_lantern:</td>
+<td>jack_o_lantern</td>
+<td style="text-align:center">:christmas_tree:</td>
+<td>christmas_tree</td>
+</tr>
+<tr>
+<td style="text-align:center">:fireworks:</td>
+<td>fireworks</td>
+<td style="text-align:center">:sparkler:</td>
+<td>sparkler</td>
+</tr>
+<tr>
+<td style="text-align:center">:sparkles:</td>
+<td>sparkles</td>
+<td style="text-align:center">:balloon:</td>
+<td>balloon</td>
+</tr>
+<tr>
+<td style="text-align:center">:tada:</td>
+<td>tada</td>
+<td style="text-align:center">:confetti_ball:</td>
+<td>confetti_ball</td>
+</tr>
+<tr>
+<td style="text-align:center">:tanabata_tree:</td>
+<td>tanabata_tree</td>
+<td style="text-align:center">:bamboo:</td>
+<td>bamboo</td>
+</tr>
+<tr>
+<td style="text-align:center">:dolls:</td>
+<td>dolls</td>
+<td style="text-align:center">:flags:</td>
+<td>flags</td>
+</tr>
+<tr>
+<td style="text-align:center">:wind_chime:</td>
+<td>wind_chime</td>
+<td style="text-align:center">:rice_scene:</td>
+<td>rice_scene</td>
+</tr>
+<tr>
+<td style="text-align:center">:ribbon:</td>
+<td>ribbon</td>
+<td style="text-align:center">:gift:</td>
+<td>gift</td>
+</tr>
+<tr>
+<td style="text-align:center">:reminder_ribbon:</td>
+<td>reminder_ribbon</td>
+<td style="text-align:center">:tickets:</td>
+<td>tickets</td>
+</tr>
+<tr>
+<td style="text-align:center">:ticket:</td>
+<td>ticket</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="award-medal">Award Medal</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:medal_military:</td>
+<td>medal_military</td>
+<td style="text-align:center">:trophy:</td>
+<td>trophy</td>
+</tr>
+<tr>
+<td style="text-align:center">:medal_sports:</td>
+<td>medal_sports</td>
+<td style="text-align:center">:1st_place_medal:</td>
+<td>1st_place_medal</td>
+</tr>
+<tr>
+<td style="text-align:center">:2nd_place_medal:</td>
+<td>2nd_place_medal</td>
+<td style="text-align:center">:3rd_place_medal:</td>
+<td>3rd_place_medal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sport">Sport</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:soccer:</td>
+<td>soccer</td>
+<td style="text-align:center">:baseball:</td>
+<td>baseball</td>
+</tr>
+<tr>
+<td style="text-align:center">:basketball:</td>
+<td>basketball</td>
+<td style="text-align:center">:volleyball:</td>
+<td>volleyball</td>
+</tr>
+<tr>
+<td style="text-align:center">:football:</td>
+<td>football</td>
+<td style="text-align:center">:rugby_football:</td>
+<td>rugby_football</td>
+</tr>
+<tr>
+<td style="text-align:center">:tennis:</td>
+<td>tennis</td>
+<td style="text-align:center">:bowling:</td>
+<td>bowling</td>
+</tr>
+<tr>
+<td style="text-align:center">:cricket:</td>
+<td>cricket</td>
+<td style="text-align:center">:field_hockey:</td>
+<td>field_hockey</td>
+</tr>
+<tr>
+<td style="text-align:center">:ice_hockey:</td>
+<td>ice_hockey</td>
+<td style="text-align:center">:ping_pong:</td>
+<td>ping_pong</td>
+</tr>
+<tr>
+<td style="text-align:center">:badminton:</td>
+<td>badminton</td>
+<td style="text-align:center">:boxing_glove:</td>
+<td>boxing_glove</td>
+</tr>
+<tr>
+<td style="text-align:center">:martial_arts_uniform:</td>
+<td>martial_arts_uniform</td>
+<td style="text-align:center">:goal_net:</td>
+<td>goal_net</td>
+</tr>
+<tr>
+<td style="text-align:center">:golf:</td>
+<td>golf</td>
+<td style="text-align:center">:ice_skate:</td>
+<td>ice_skate</td>
+</tr>
+<tr>
+<td style="text-align:center">:fishing_pole_and_fish:</td>
+<td>fishing_pole_and_fish</td>
+<td style="text-align:center">:running_shirt_with_sash:</td>
+<td>running_shirt_with_sash</td>
+</tr>
+<tr>
+<td style="text-align:center">:ski:</td>
+<td>ski</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="game">Game</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:dart:</td>
+<td>dart</td>
+<td style="text-align:center">:8ball:</td>
+<td>8ball</td>
+</tr>
+<tr>
+<td style="text-align:center">:crystal_ball:</td>
+<td>crystal_ball</td>
+<td style="text-align:center">:video_game:</td>
+<td>video_game</td>
+</tr>
+<tr>
+<td style="text-align:center">:joystick:</td>
+<td>joystick</td>
+<td style="text-align:center">:slot_machine:</td>
+<td>slot_machine</td>
+</tr>
+<tr>
+<td style="text-align:center">:game_die:</td>
+<td>game_die</td>
+<td style="text-align:center">:spades:</td>
+<td>spades</td>
+</tr>
+<tr>
+<td style="text-align:center">:hearts:</td>
+<td>hearts</td>
+<td style="text-align:center">:diamonds:</td>
+<td>diamonds</td>
+</tr>
+<tr>
+<td style="text-align:center">:clubs:</td>
+<td>clubs</td>
+<td style="text-align:center">:black_joker:</td>
+<td>black_joker</td>
+</tr>
+<tr>
+<td style="text-align:center">:mahjong:</td>
+<td>mahjong</td>
+<td style="text-align:center">:flower_playing_cards:</td>
+<td>flower_playing_cards</td>
+</tr>
+</tbody>
+</table>
+<h3 id="arts--crafts">Arts &amp; Crafts</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:performing_arts:</td>
+<td>performing_arts</td>
+<td style="text-align:center">:framed_picture:</td>
+<td>framed_picture</td>
+</tr>
+<tr>
+<td style="text-align:center">:art:</td>
+<td>art</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="objects">Objects</h2>
+<h3 id="clothing">Clothing</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:eyeglasses:</td>
+<td>eyeglasses</td>
+<td style="text-align:center">:dark_sunglasses:</td>
+<td>dark_sunglasses</td>
+</tr>
+<tr>
+<td style="text-align:center">:necktie:</td>
+<td>necktie</td>
+<td style="text-align:center">:shirt:</td>
+<td>shirt <!-- raw HTML omitted --> tshirt</td>
+</tr>
+<tr>
+<td style="text-align:center">:jeans:</td>
+<td>jeans</td>
+<td style="text-align:center">:dress:</td>
+<td>dress</td>
+</tr>
+<tr>
+<td style="text-align:center">:kimono:</td>
+<td>kimono</td>
+<td style="text-align:center">:bikini:</td>
+<td>bikini</td>
+</tr>
+<tr>
+<td style="text-align:center">:womans_clothes:</td>
+<td>womans_clothes</td>
+<td style="text-align:center">:purse:</td>
+<td>purse</td>
+</tr>
+<tr>
+<td style="text-align:center">:handbag:</td>
+<td>handbag</td>
+<td style="text-align:center">:pouch:</td>
+<td>pouch</td>
+</tr>
+<tr>
+<td style="text-align:center">:shopping:</td>
+<td>shopping</td>
+<td style="text-align:center">:school_satchel:</td>
+<td>school_satchel</td>
+</tr>
+<tr>
+<td style="text-align:center">:mans_shoe:</td>
+<td>mans_shoe <!-- raw HTML omitted --> shoe</td>
+<td style="text-align:center">:athletic_shoe:</td>
+<td>athletic_shoe</td>
+</tr>
+<tr>
+<td style="text-align:center">:high_heel:</td>
+<td>high_heel</td>
+<td style="text-align:center">:sandal:</td>
+<td>sandal</td>
+</tr>
+<tr>
+<td style="text-align:center">:boot:</td>
+<td>boot</td>
+<td style="text-align:center">:crown:</td>
+<td>crown</td>
+</tr>
+<tr>
+<td style="text-align:center">:womans_hat:</td>
+<td>womans_hat</td>
+<td style="text-align:center">:tophat:</td>
+<td>tophat</td>
+</tr>
+<tr>
+<td style="text-align:center">:mortar_board:</td>
+<td>mortar_board</td>
+<td style="text-align:center">:rescue_worker_helmet:</td>
+<td>rescue_worker_helmet</td>
+</tr>
+<tr>
+<td style="text-align:center">:prayer_beads:</td>
+<td>prayer_beads</td>
+<td style="text-align:center">:lipstick:</td>
+<td>lipstick</td>
+</tr>
+<tr>
+<td style="text-align:center">:ring:</td>
+<td>ring</td>
+<td style="text-align:center">:gem:</td>
+<td>gem</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sound">Sound</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:mute:</td>
+<td>mute</td>
+<td style="text-align:center">:speaker:</td>
+<td>speaker</td>
+</tr>
+<tr>
+<td style="text-align:center">:sound:</td>
+<td>sound</td>
+<td style="text-align:center">:loud_sound:</td>
+<td>loud_sound</td>
+</tr>
+<tr>
+<td style="text-align:center">:loudspeaker:</td>
+<td>loudspeaker</td>
+<td style="text-align:center">:mega:</td>
+<td>mega</td>
+</tr>
+<tr>
+<td style="text-align:center">:postal_horn:</td>
+<td>postal_horn</td>
+<td style="text-align:center">:bell:</td>
+<td>bell</td>
+</tr>
+<tr>
+<td style="text-align:center">:no_bell:</td>
+<td>no_bell</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="music">Music</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:musical_score:</td>
+<td>musical_score</td>
+<td style="text-align:center">:musical_note:</td>
+<td>musical_note</td>
+</tr>
+<tr>
+<td style="text-align:center">:notes:</td>
+<td>notes</td>
+<td style="text-align:center">:studio_microphone:</td>
+<td>studio_microphone</td>
+</tr>
+<tr>
+<td style="text-align:center">:level_slider:</td>
+<td>level_slider</td>
+<td style="text-align:center">:control_knobs:</td>
+<td>control_knobs</td>
+</tr>
+<tr>
+<td style="text-align:center">:microphone:</td>
+<td>microphone</td>
+<td style="text-align:center">:headphones:</td>
+<td>headphones</td>
+</tr>
+<tr>
+<td style="text-align:center">:radio:</td>
+<td>radio</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="musical-instrument">Musical Instrument</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:saxophone:</td>
+<td>saxophone</td>
+<td style="text-align:center">:guitar:</td>
+<td>guitar</td>
+</tr>
+<tr>
+<td style="text-align:center">:musical_keyboard:</td>
+<td>musical_keyboard</td>
+<td style="text-align:center">:trumpet:</td>
+<td>trumpet</td>
+</tr>
+<tr>
+<td style="text-align:center">:violin:</td>
+<td>violin</td>
+<td style="text-align:center">:drum:</td>
+<td>drum</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phone">Phone</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:iphone:</td>
+<td>iphone</td>
+<td style="text-align:center">:calling:</td>
+<td>calling</td>
+</tr>
+<tr>
+<td style="text-align:center">:phone:</td>
+<td>phone <!-- raw HTML omitted --> telephone</td>
+<td style="text-align:center">:telephone_receiver:</td>
+<td>telephone_receiver</td>
+</tr>
+<tr>
+<td style="text-align:center">:pager:</td>
+<td>pager</td>
+<td style="text-align:center">:fax:</td>
+<td>fax</td>
+</tr>
+</tbody>
+</table>
+<h3 id="computer">Computer</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:battery:</td>
+<td>battery</td>
+<td style="text-align:center">:electric_plug:</td>
+<td>electric_plug</td>
+</tr>
+<tr>
+<td style="text-align:center">:computer:</td>
+<td>computer</td>
+<td style="text-align:center">:desktop_computer:</td>
+<td>desktop_computer</td>
+</tr>
+<tr>
+<td style="text-align:center">:printer:</td>
+<td>printer</td>
+<td style="text-align:center">:keyboard:</td>
+<td>keyboard</td>
+</tr>
+<tr>
+<td style="text-align:center">:computer_mouse:</td>
+<td>computer_mouse</td>
+<td style="text-align:center">:trackball:</td>
+<td>trackball</td>
+</tr>
+<tr>
+<td style="text-align:center">:minidisc:</td>
+<td>minidisc</td>
+<td style="text-align:center">:floppy_disk:</td>
+<td>floppy_disk</td>
+</tr>
+<tr>
+<td style="text-align:center">:cd:</td>
+<td>cd</td>
+<td style="text-align:center">:dvd:</td>
+<td>dvd</td>
+</tr>
+</tbody>
+</table>
+<h3 id="light--video">Light &amp; Video</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:movie_camera:</td>
+<td>movie_camera</td>
+<td style="text-align:center">:film_strip:</td>
+<td>film_strip</td>
+</tr>
+<tr>
+<td style="text-align:center">:film_projector:</td>
+<td>film_projector</td>
+<td style="text-align:center">:clapper:</td>
+<td>clapper</td>
+</tr>
+<tr>
+<td style="text-align:center">:tv:</td>
+<td>tv</td>
+<td style="text-align:center">:camera:</td>
+<td>camera</td>
+</tr>
+<tr>
+<td style="text-align:center">:camera_flash:</td>
+<td>camera_flash</td>
+<td style="text-align:center">:video_camera:</td>
+<td>video_camera</td>
+</tr>
+<tr>
+<td style="text-align:center">:vhs:</td>
+<td>vhs</td>
+<td style="text-align:center">:mag:</td>
+<td>mag</td>
+</tr>
+<tr>
+<td style="text-align:center">:mag_right:</td>
+<td>mag_right</td>
+<td style="text-align:center">:candle:</td>
+<td>candle</td>
+</tr>
+<tr>
+<td style="text-align:center">:bulb:</td>
+<td>bulb</td>
+<td style="text-align:center">:flashlight:</td>
+<td>flashlight</td>
+</tr>
+<tr>
+<td style="text-align:center">:izakaya_lantern:</td>
+<td>izakaya_lantern <!-- raw HTML omitted --> lantern</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="book-paper">Book Paper</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:notebook_with_decorative_cover:</td>
+<td>notebook_with_decorative_cover</td>
+<td style="text-align:center">:closed_book:</td>
+<td>closed_book</td>
+</tr>
+<tr>
+<td style="text-align:center">:book:</td>
+<td>book <!-- raw HTML omitted --> open_book</td>
+<td style="text-align:center">:green_book:</td>
+<td>green_book</td>
+</tr>
+<tr>
+<td style="text-align:center">:blue_book:</td>
+<td>blue_book</td>
+<td style="text-align:center">:orange_book:</td>
+<td>orange_book</td>
+</tr>
+<tr>
+<td style="text-align:center">:books:</td>
+<td>books</td>
+<td style="text-align:center">:notebook:</td>
+<td>notebook</td>
+</tr>
+<tr>
+<td style="text-align:center">:ledger:</td>
+<td>ledger</td>
+<td style="text-align:center">:page_with_curl:</td>
+<td>page_with_curl</td>
+</tr>
+<tr>
+<td style="text-align:center">:scroll:</td>
+<td>scroll</td>
+<td style="text-align:center">:page_facing_up:</td>
+<td>page_facing_up</td>
+</tr>
+<tr>
+<td style="text-align:center">:newspaper:</td>
+<td>newspaper</td>
+<td style="text-align:center">:newspaper_roll:</td>
+<td>newspaper_roll</td>
+</tr>
+<tr>
+<td style="text-align:center">:bookmark_tabs:</td>
+<td>bookmark_tabs</td>
+<td style="text-align:center">:bookmark:</td>
+<td>bookmark</td>
+</tr>
+<tr>
+<td style="text-align:center">:label:</td>
+<td>label</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="money">Money</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:moneybag:</td>
+<td>moneybag</td>
+<td style="text-align:center">:yen:</td>
+<td>yen</td>
+</tr>
+<tr>
+<td style="text-align:center">:dollar:</td>
+<td>dollar</td>
+<td style="text-align:center">:euro:</td>
+<td>euro</td>
+</tr>
+<tr>
+<td style="text-align:center">:pound:</td>
+<td>pound</td>
+<td style="text-align:center">:money_with_wings:</td>
+<td>money_with_wings</td>
+</tr>
+<tr>
+<td style="text-align:center">:credit_card:</td>
+<td>credit_card</td>
+<td style="text-align:center">:chart:</td>
+<td>chart</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mail">Mail</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:email:</td>
+<td>email <!-- raw HTML omitted --> envelope</td>
+<td style="text-align:center">:e-mail:</td>
+<td>:e-mail:</td>
+</tr>
+<tr>
+<td style="text-align:center">:incoming_envelope:</td>
+<td>incoming_envelope</td>
+<td style="text-align:center">:envelope_with_arrow:</td>
+<td>envelope_with_arrow</td>
+</tr>
+<tr>
+<td style="text-align:center">:outbox_tray:</td>
+<td>outbox_tray</td>
+<td style="text-align:center">:inbox_tray:</td>
+<td>inbox_tray</td>
+</tr>
+<tr>
+<td style="text-align:center">:package:</td>
+<td>package</td>
+<td style="text-align:center">:mailbox:</td>
+<td>mailbox</td>
+</tr>
+<tr>
+<td style="text-align:center">:mailbox_closed:</td>
+<td>mailbox_closed</td>
+<td style="text-align:center">:mailbox_with_mail:</td>
+<td>mailbox_with_mail</td>
+</tr>
+<tr>
+<td style="text-align:center">:mailbox_with_no_mail:</td>
+<td>mailbox_with_no_mail</td>
+<td style="text-align:center">:postbox:</td>
+<td>postbox</td>
+</tr>
+<tr>
+<td style="text-align:center">:ballot_box:</td>
+<td>ballot_box</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="writing">Writing</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:pencil2:</td>
+<td>pencil2</td>
+<td style="text-align:center">:black_nib:</td>
+<td>black_nib</td>
+</tr>
+<tr>
+<td style="text-align:center">:fountain_pen:</td>
+<td>fountain_pen</td>
+<td style="text-align:center">:pen:</td>
+<td>pen</td>
+</tr>
+<tr>
+<td style="text-align:center">:paintbrush:</td>
+<td>paintbrush</td>
+<td style="text-align:center">:crayon:</td>
+<td>crayon</td>
+</tr>
+<tr>
+<td style="text-align:center">:memo:</td>
+<td>memo <!-- raw HTML omitted --> pencil</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="office">Office</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:briefcase:</td>
+<td>briefcase</td>
+<td style="text-align:center">:file_folder:</td>
+<td>file_folder</td>
+</tr>
+<tr>
+<td style="text-align:center">:open_file_folder:</td>
+<td>open_file_folder</td>
+<td style="text-align:center">:card_index_dividers:</td>
+<td>card_index_dividers</td>
+</tr>
+<tr>
+<td style="text-align:center">:date:</td>
+<td>date</td>
+<td style="text-align:center">:calendar:</td>
+<td>calendar</td>
+</tr>
+<tr>
+<td style="text-align:center">:spiral_notepad:</td>
+<td>spiral_notepad</td>
+<td style="text-align:center">:spiral_calendar:</td>
+<td>spiral_calendar</td>
+</tr>
+<tr>
+<td style="text-align:center">:card_index:</td>
+<td>card_index</td>
+<td style="text-align:center">:chart_with_upwards_trend:</td>
+<td>chart_with_upwards_trend</td>
+</tr>
+<tr>
+<td style="text-align:center">:chart_with_downwards_trend:</td>
+<td>chart_with_downwards_trend</td>
+<td style="text-align:center">:bar_chart:</td>
+<td>bar_chart</td>
+</tr>
+<tr>
+<td style="text-align:center">:clipboard:</td>
+<td>clipboard</td>
+<td style="text-align:center">:pushpin:</td>
+<td>pushpin</td>
+</tr>
+<tr>
+<td style="text-align:center">:round_pushpin:</td>
+<td>round_pushpin</td>
+<td style="text-align:center">:paperclip:</td>
+<td>paperclip</td>
+</tr>
+<tr>
+<td style="text-align:center">:paperclips:</td>
+<td>paperclips</td>
+<td style="text-align:center">:straight_ruler:</td>
+<td>straight_ruler</td>
+</tr>
+<tr>
+<td style="text-align:center">:triangular_ruler:</td>
+<td>triangular_ruler</td>
+<td style="text-align:center">:scissors:</td>
+<td>scissors</td>
+</tr>
+<tr>
+<td style="text-align:center">:card_file_box:</td>
+<td>card_file_box</td>
+<td style="text-align:center">:file_cabinet:</td>
+<td>file_cabinet</td>
+</tr>
+<tr>
+<td style="text-align:center">:wastebasket:</td>
+<td>wastebasket</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="lock">Lock</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:lock:</td>
+<td>lock</td>
+<td style="text-align:center">:unlock:</td>
+<td>unlock</td>
+</tr>
+<tr>
+<td style="text-align:center">:lock_with_ink_pen:</td>
+<td>lock_with_ink_pen</td>
+<td style="text-align:center">:closed_lock_with_key:</td>
+<td>closed_lock_with_key</td>
+</tr>
+<tr>
+<td style="text-align:center">:key:</td>
+<td>key</td>
+<td style="text-align:center">:old_key:</td>
+<td>old_key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tool">Tool</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:hammer:</td>
+<td>hammer</td>
+<td style="text-align:center">:pick:</td>
+<td>pick</td>
+</tr>
+<tr>
+<td style="text-align:center">:hammer_and_pick:</td>
+<td>hammer_and_pick</td>
+<td style="text-align:center">:hammer_and_wrench:</td>
+<td>hammer_and_wrench</td>
+</tr>
+<tr>
+<td style="text-align:center">:dagger:</td>
+<td>dagger</td>
+<td style="text-align:center">:crossed_swords:</td>
+<td>crossed_swords</td>
+</tr>
+<tr>
+<td style="text-align:center">:gun:</td>
+<td>gun</td>
+<td style="text-align:center">:bow_and_arrow:</td>
+<td>bow_and_arrow</td>
+</tr>
+<tr>
+<td style="text-align:center">:shield:</td>
+<td>shield</td>
+<td style="text-align:center">:wrench:</td>
+<td>wrench</td>
+</tr>
+<tr>
+<td style="text-align:center">:nut_and_bolt:</td>
+<td>nut_and_bolt</td>
+<td style="text-align:center">:gear:</td>
+<td>gear</td>
+</tr>
+<tr>
+<td style="text-align:center">:clamp:</td>
+<td>clamp</td>
+<td style="text-align:center">:balance_scale:</td>
+<td>balance_scale</td>
+</tr>
+<tr>
+<td style="text-align:center">:link:</td>
+<td>link</td>
+<td style="text-align:center">:chains:</td>
+<td>chains</td>
+</tr>
+</tbody>
+</table>
+<h3 id="science">Science</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:alembic:</td>
+<td>alembic</td>
+<td style="text-align:center">:microscope:</td>
+<td>microscope</td>
+</tr>
+<tr>
+<td style="text-align:center">:telescope:</td>
+<td>telescope</td>
+<td style="text-align:center">:satellite:</td>
+<td>satellite</td>
+</tr>
+</tbody>
+</table>
+<h3 id="medical">Medical</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:syringe:</td>
+<td>syringe</td>
+<td style="text-align:center">:pill:</td>
+<td>pill</td>
+</tr>
+</tbody>
+</table>
+<h3 id="household">Household</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:door:</td>
+<td>door</td>
+<td style="text-align:center">:bed:</td>
+<td>bed</td>
+</tr>
+<tr>
+<td style="text-align:center">:couch_and_lamp:</td>
+<td>couch_and_lamp</td>
+<td style="text-align:center">:toilet:</td>
+<td>toilet</td>
+</tr>
+<tr>
+<td style="text-align:center">:shower:</td>
+<td>shower</td>
+<td style="text-align:center">:bathtub:</td>
+<td>bathtub</td>
+</tr>
+<tr>
+<td style="text-align:center">:shopping_cart:</td>
+<td>shopping_cart</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-object">Other Object</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:smoking:</td>
+<td>smoking</td>
+<td style="text-align:center">:coffin:</td>
+<td>coffin</td>
+</tr>
+<tr>
+<td style="text-align:center">:funeral_urn:</td>
+<td>funeral_urn</td>
+<td style="text-align:center">:moyai:</td>
+<td>moyai</td>
+</tr>
+</tbody>
+</table>
+<h2 id="symbols">Symbols</h2>
+<h3 id="transport-sign">Transport Sign</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:atm:</td>
+<td>atm</td>
+<td style="text-align:center">:put_litter_in_its_place:</td>
+<td>put_litter_in_its_place</td>
+</tr>
+<tr>
+<td style="text-align:center">:potable_water:</td>
+<td>potable_water</td>
+<td style="text-align:center">:wheelchair:</td>
+<td>wheelchair</td>
+</tr>
+<tr>
+<td style="text-align:center">:mens:</td>
+<td>mens</td>
+<td style="text-align:center">:womens:</td>
+<td>womens</td>
+</tr>
+<tr>
+<td style="text-align:center">:restroom:</td>
+<td>restroom</td>
+<td style="text-align:center">:baby_symbol:</td>
+<td>baby_symbol</td>
+</tr>
+<tr>
+<td style="text-align:center">:wc:</td>
+<td>wc</td>
+<td style="text-align:center">:passport_control:</td>
+<td>passport_control</td>
+</tr>
+<tr>
+<td style="text-align:center">:customs:</td>
+<td>customs</td>
+<td style="text-align:center">:baggage_claim:</td>
+<td>baggage_claim</td>
+</tr>
+<tr>
+<td style="text-align:center">:left_luggage:</td>
+<td>left_luggage</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="warning">Warning</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:warning:</td>
+<td>warning</td>
+<td style="text-align:center">:children_crossing:</td>
+<td>children_crossing</td>
+</tr>
+<tr>
+<td style="text-align:center">:no_entry:</td>
+<td>no_entry</td>
+<td style="text-align:center">:no_entry_sign:</td>
+<td>no_entry_sign</td>
+</tr>
+<tr>
+<td style="text-align:center">:no_bicycles:</td>
+<td>no_bicycles</td>
+<td style="text-align:center">:no_smoking:</td>
+<td>no_smoking</td>
+</tr>
+<tr>
+<td style="text-align:center">:do_not_litter:</td>
+<td>do_not_litter</td>
+<td style="text-align:center">:non-potable_water:</td>
+<td>:non-potable_water:</td>
+</tr>
+<tr>
+<td style="text-align:center">:no_pedestrians:</td>
+<td>no_pedestrians</td>
+<td style="text-align:center">:no_mobile_phones:</td>
+<td>no_mobile_phones</td>
+</tr>
+<tr>
+<td style="text-align:center">:underage:</td>
+<td>underage</td>
+<td style="text-align:center">:radioactive:</td>
+<td>radioactive</td>
+</tr>
+<tr>
+<td style="text-align:center">:biohazard:</td>
+<td>biohazard</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="arrow">Arrow</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:arrow_up:</td>
+<td>arrow_up</td>
+<td style="text-align:center">:arrow_upper_right:</td>
+<td>arrow_upper_right</td>
+</tr>
+<tr>
+<td style="text-align:center">:arrow_right:</td>
+<td>arrow_right</td>
+<td style="text-align:center">:arrow_lower_right:</td>
+<td>arrow_lower_right</td>
+</tr>
+<tr>
+<td style="text-align:center">:arrow_down:</td>
+<td>arrow_down</td>
+<td style="text-align:center">:arrow_lower_left:</td>
+<td>arrow_lower_left</td>
+</tr>
+<tr>
+<td style="text-align:center">:arrow_left:</td>
+<td>arrow_left</td>
+<td style="text-align:center">:arrow_upper_left:</td>
+<td>arrow_upper_left</td>
+</tr>
+<tr>
+<td style="text-align:center">:arrow_up_down:</td>
+<td>arrow_up_down</td>
+<td style="text-align:center">:left_right_arrow:</td>
+<td>left_right_arrow</td>
+</tr>
+<tr>
+<td style="text-align:center">:leftwards_arrow_with_hook:</td>
+<td>leftwards_arrow_with_hook</td>
+<td style="text-align:center">:arrow_right_hook:</td>
+<td>arrow_right_hook</td>
+</tr>
+<tr>
+<td style="text-align:center">:arrow_heading_up:</td>
+<td>arrow_heading_up</td>
+<td style="text-align:center">:arrow_heading_down:</td>
+<td>arrow_heading_down</td>
+</tr>
+<tr>
+<td style="text-align:center">:arrows_clockwise:</td>
+<td>arrows_clockwise</td>
+<td style="text-align:center">:arrows_counterclockwise:</td>
+<td>arrows_counterclockwise</td>
+</tr>
+<tr>
+<td style="text-align:center">:back:</td>
+<td>back</td>
+<td style="text-align:center">:end:</td>
+<td>end</td>
+</tr>
+<tr>
+<td style="text-align:center">:on:</td>
+<td>on</td>
+<td style="text-align:center">:soon:</td>
+<td>soon</td>
+</tr>
+<tr>
+<td style="text-align:center">:top:</td>
+<td>top</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="religion">Religion</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:place_of_worship:</td>
+<td>place_of_worship</td>
+<td style="text-align:center">:atom_symbol:</td>
+<td>atom_symbol</td>
+</tr>
+<tr>
+<td style="text-align:center">:om:</td>
+<td>om</td>
+<td style="text-align:center">:star_of_david:</td>
+<td>star_of_david</td>
+</tr>
+<tr>
+<td style="text-align:center">:wheel_of_dharma:</td>
+<td>wheel_of_dharma</td>
+<td style="text-align:center">:yin_yang:</td>
+<td>yin_yang</td>
+</tr>
+<tr>
+<td style="text-align:center">:latin_cross:</td>
+<td>latin_cross</td>
+<td style="text-align:center">:orthodox_cross:</td>
+<td>orthodox_cross</td>
+</tr>
+<tr>
+<td style="text-align:center">:star_and_crescent:</td>
+<td>star_and_crescent</td>
+<td style="text-align:center">:peace_symbol:</td>
+<td>peace_symbol</td>
+</tr>
+<tr>
+<td style="text-align:center">:menorah:</td>
+<td>menorah</td>
+<td style="text-align:center">:six_pointed_star:</td>
+<td>six_pointed_star</td>
+</tr>
+</tbody>
+</table>
+<h3 id="zodiac">Zodiac</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:aries:</td>
+<td>aries</td>
+<td style="text-align:center">:taurus:</td>
+<td>taurus</td>
+</tr>
+<tr>
+<td style="text-align:center">:gemini:</td>
+<td>gemini</td>
+<td style="text-align:center">:cancer:</td>
+<td>cancer</td>
+</tr>
+<tr>
+<td style="text-align:center">:leo:</td>
+<td>leo</td>
+<td style="text-align:center">:virgo:</td>
+<td>virgo</td>
+</tr>
+<tr>
+<td style="text-align:center">:libra:</td>
+<td>libra</td>
+<td style="text-align:center">:scorpius:</td>
+<td>scorpius</td>
+</tr>
+<tr>
+<td style="text-align:center">:sagittarius:</td>
+<td>sagittarius</td>
+<td style="text-align:center">:capricorn:</td>
+<td>capricorn</td>
+</tr>
+<tr>
+<td style="text-align:center">:aquarius:</td>
+<td>aquarius</td>
+<td style="text-align:center">:pisces:</td>
+<td>pisces</td>
+</tr>
+<tr>
+<td style="text-align:center">:ophiuchus:</td>
+<td>ophiuchus</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="av-symbol">Av Symbol</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:twisted_rightwards_arrows:</td>
+<td>twisted_rightwards_arrows</td>
+<td style="text-align:center">:repeat:</td>
+<td>repeat</td>
+</tr>
+<tr>
+<td style="text-align:center">:repeat_one:</td>
+<td>repeat_one</td>
+<td style="text-align:center">:arrow_forward:</td>
+<td>arrow_forward</td>
+</tr>
+<tr>
+<td style="text-align:center">:fast_forward:</td>
+<td>fast_forward</td>
+<td style="text-align:center">:next_track_button:</td>
+<td>next_track_button</td>
+</tr>
+<tr>
+<td style="text-align:center">:play_or_pause_button:</td>
+<td>play_or_pause_button</td>
+<td style="text-align:center">:arrow_backward:</td>
+<td>arrow_backward</td>
+</tr>
+<tr>
+<td style="text-align:center">:rewind:</td>
+<td>rewind</td>
+<td style="text-align:center">:previous_track_button:</td>
+<td>previous_track_button</td>
+</tr>
+<tr>
+<td style="text-align:center">:arrow_up_small:</td>
+<td>arrow_up_small</td>
+<td style="text-align:center">:arrow_double_up:</td>
+<td>arrow_double_up</td>
+</tr>
+<tr>
+<td style="text-align:center">:arrow_down_small:</td>
+<td>arrow_down_small</td>
+<td style="text-align:center">:arrow_double_down:</td>
+<td>arrow_double_down</td>
+</tr>
+<tr>
+<td style="text-align:center">:pause_button:</td>
+<td>pause_button</td>
+<td style="text-align:center">:stop_button:</td>
+<td>stop_button</td>
+</tr>
+<tr>
+<td style="text-align:center">:record_button:</td>
+<td>record_button</td>
+<td style="text-align:center">:cinema:</td>
+<td>cinema</td>
+</tr>
+<tr>
+<td style="text-align:center">:low_brightness:</td>
+<td>low_brightness</td>
+<td style="text-align:center">:high_brightness:</td>
+<td>high_brightness</td>
+</tr>
+<tr>
+<td style="text-align:center">:signal_strength:</td>
+<td>signal_strength</td>
+<td style="text-align:center">:vibration_mode:</td>
+<td>vibration_mode</td>
+</tr>
+<tr>
+<td style="text-align:center">:mobile_phone_off:</td>
+<td>mobile_phone_off</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="math">Math</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:heavy_multiplication_x:</td>
+<td>heavy_multiplication_x</td>
+<td style="text-align:center">:heavy_plus_sign:</td>
+<td>heavy_plus_sign</td>
+</tr>
+<tr>
+<td style="text-align:center">:heavy_minus_sign:</td>
+<td>heavy_minus_sign</td>
+<td style="text-align:center">:heavy_division_sign:</td>
+<td>heavy_division_sign</td>
+</tr>
+</tbody>
+</table>
+<h3 id="punctuation">Punctuation</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:bangbang:</td>
+<td>bangbang</td>
+<td style="text-align:center">:interrobang:</td>
+<td>interrobang</td>
+</tr>
+<tr>
+<td style="text-align:center">:question:</td>
+<td>question</td>
+<td style="text-align:center">:grey_question:</td>
+<td>grey_question</td>
+</tr>
+<tr>
+<td style="text-align:center">:grey_exclamation:</td>
+<td>grey_exclamation</td>
+<td style="text-align:center">:exclamation:</td>
+<td>exclamation <!-- raw HTML omitted --> heavy_exclamation_mark</td>
+</tr>
+<tr>
+<td style="text-align:center">:wavy_dash:</td>
+<td>wavy_dash</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="currency">Currency</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:currency_exchange:</td>
+<td>currency_exchange</td>
+<td style="text-align:center">:heavy_dollar_sign:</td>
+<td>heavy_dollar_sign</td>
+</tr>
+</tbody>
+</table>
+<h3 id="keycap">Keycap</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:hash:</td>
+<td>hash</td>
+<td style="text-align:center">:asterisk:</td>
+<td>asterisk</td>
+</tr>
+<tr>
+<td style="text-align:center">:zero:</td>
+<td>zero</td>
+<td style="text-align:center">:one:</td>
+<td>one</td>
+</tr>
+<tr>
+<td style="text-align:center">:two:</td>
+<td>two</td>
+<td style="text-align:center">:three:</td>
+<td>three</td>
+</tr>
+<tr>
+<td style="text-align:center">:four:</td>
+<td>four</td>
+<td style="text-align:center">:five:</td>
+<td>five</td>
+</tr>
+<tr>
+<td style="text-align:center">:six:</td>
+<td>six</td>
+<td style="text-align:center">:seven:</td>
+<td>seven</td>
+</tr>
+<tr>
+<td style="text-align:center">:eight:</td>
+<td>eight</td>
+<td style="text-align:center">:nine:</td>
+<td>nine</td>
+</tr>
+<tr>
+<td style="text-align:center">:keycap_ten:</td>
+<td>keycap_ten</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="alphabet">Alphabet</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:capital_abcd:</td>
+<td>capital_abcd</td>
+<td style="text-align:center">:abcd:</td>
+<td>abcd</td>
+</tr>
+<tr>
+<td style="text-align:center">:1234:</td>
+<td>1234</td>
+<td style="text-align:center">:symbols:</td>
+<td>symbols</td>
+</tr>
+<tr>
+<td style="text-align:center">:abc:</td>
+<td>abc</td>
+<td style="text-align:center">:a:</td>
+<td>a</td>
+</tr>
+<tr>
+<td style="text-align:center">:ab:</td>
+<td>ab</td>
+<td style="text-align:center">:b:</td>
+<td>b</td>
+</tr>
+<tr>
+<td style="text-align:center">:cl:</td>
+<td>cl</td>
+<td style="text-align:center">:cool:</td>
+<td>cool</td>
+</tr>
+<tr>
+<td style="text-align:center">:free:</td>
+<td>free</td>
+<td style="text-align:center">:information_source:</td>
+<td>information_source</td>
+</tr>
+<tr>
+<td style="text-align:center">:id:</td>
+<td>id</td>
+<td style="text-align:center">:m:</td>
+<td>m</td>
+</tr>
+<tr>
+<td style="text-align:center">:new:</td>
+<td>new</td>
+<td style="text-align:center">:ng:</td>
+<td>ng</td>
+</tr>
+<tr>
+<td style="text-align:center">:o2:</td>
+<td>o2</td>
+<td style="text-align:center">:ok:</td>
+<td>ok</td>
+</tr>
+<tr>
+<td style="text-align:center">:parking:</td>
+<td>parking</td>
+<td style="text-align:center">:sos:</td>
+<td>sos</td>
+</tr>
+<tr>
+<td style="text-align:center">:up:</td>
+<td>up</td>
+<td style="text-align:center">:vs:</td>
+<td>vs</td>
+</tr>
+<tr>
+<td style="text-align:center">:koko:</td>
+<td>koko</td>
+<td style="text-align:center">:sa:</td>
+<td>sa</td>
+</tr>
+<tr>
+<td style="text-align:center">:u6708:</td>
+<td>u6708</td>
+<td style="text-align:center">:u6709:</td>
+<td>u6709</td>
+</tr>
+<tr>
+<td style="text-align:center">:u6307:</td>
+<td>u6307</td>
+<td style="text-align:center">:ideograph_advantage:</td>
+<td>ideograph_advantage</td>
+</tr>
+<tr>
+<td style="text-align:center">:u5272:</td>
+<td>u5272</td>
+<td style="text-align:center">:u7121:</td>
+<td>u7121</td>
+</tr>
+<tr>
+<td style="text-align:center">:u7981:</td>
+<td>u7981</td>
+<td style="text-align:center">:accept:</td>
+<td>accept</td>
+</tr>
+<tr>
+<td style="text-align:center">:u7533:</td>
+<td>u7533</td>
+<td style="text-align:center">:u5408:</td>
+<td>u5408</td>
+</tr>
+<tr>
+<td style="text-align:center">:u7a7a:</td>
+<td>u7a7a</td>
+<td style="text-align:center">:congratulations:</td>
+<td>congratulations</td>
+</tr>
+<tr>
+<td style="text-align:center">:secret:</td>
+<td>secret</td>
+<td style="text-align:center">:u55b6:</td>
+<td>u55b6</td>
+</tr>
+<tr>
+<td style="text-align:center">:u6e80:</td>
+<td>u6e80</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="geometric">Geometric</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:red_circle:</td>
+<td>red_circle</td>
+<td style="text-align:center">:large_blue_circle:</td>
+<td>large_blue_circle</td>
+</tr>
+<tr>
+<td style="text-align:center">:black_circle:</td>
+<td>black_circle</td>
+<td style="text-align:center">:white_circle:</td>
+<td>white_circle</td>
+</tr>
+<tr>
+<td style="text-align:center">:black_large_square:</td>
+<td>black_large_square</td>
+<td style="text-align:center">:white_large_square:</td>
+<td>white_large_square</td>
+</tr>
+<tr>
+<td style="text-align:center">:black_medium_square:</td>
+<td>black_medium_square</td>
+<td style="text-align:center">:white_medium_square:</td>
+<td>white_medium_square</td>
+</tr>
+<tr>
+<td style="text-align:center">:black_medium_small_square:</td>
+<td>black_medium_small_square</td>
+<td style="text-align:center">:white_medium_small_square:</td>
+<td>white_medium_small_square</td>
+</tr>
+<tr>
+<td style="text-align:center">:black_small_square:</td>
+<td>black_small_square</td>
+<td style="text-align:center">:white_small_square:</td>
+<td>white_small_square</td>
+</tr>
+<tr>
+<td style="text-align:center">:large_orange_diamond:</td>
+<td>large_orange_diamond</td>
+<td style="text-align:center">:large_blue_diamond:</td>
+<td>large_blue_diamond</td>
+</tr>
+<tr>
+<td style="text-align:center">:small_orange_diamond:</td>
+<td>small_orange_diamond</td>
+<td style="text-align:center">:small_blue_diamond:</td>
+<td>small_blue_diamond</td>
+</tr>
+<tr>
+<td style="text-align:center">:small_red_triangle:</td>
+<td>small_red_triangle</td>
+<td style="text-align:center">:small_red_triangle_down:</td>
+<td>small_red_triangle_down</td>
+</tr>
+<tr>
+<td style="text-align:center">:diamond_shape_with_a_dot_inside:</td>
+<td>diamond_shape_with_a_dot_inside</td>
+<td style="text-align:center">:radio_button:</td>
+<td>radio_button</td>
+</tr>
+<tr>
+<td style="text-align:center">:white_square_button:</td>
+<td>white_square_button</td>
+<td style="text-align:center">:black_square_button:</td>
+<td>black_square_button</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-symbol">Other Symbol</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:recycle:</td>
+<td>recycle</td>
+<td style="text-align:center">:fleur_de_lis:</td>
+<td>fleur_de_lis</td>
+</tr>
+<tr>
+<td style="text-align:center">:trident:</td>
+<td>trident</td>
+<td style="text-align:center">:name_badge:</td>
+<td>name_badge</td>
+</tr>
+<tr>
+<td style="text-align:center">:beginner:</td>
+<td>beginner</td>
+<td style="text-align:center">:o:</td>
+<td>o</td>
+</tr>
+<tr>
+<td style="text-align:center">:white_check_mark:</td>
+<td>white_check_mark</td>
+<td style="text-align:center">:ballot_box_with_check:</td>
+<td>ballot_box_with_check</td>
+</tr>
+<tr>
+<td style="text-align:center">:heavy_check_mark:</td>
+<td>heavy_check_mark</td>
+<td style="text-align:center">:x:</td>
+<td>x</td>
+</tr>
+<tr>
+<td style="text-align:center">:negative_squared_cross_mark:</td>
+<td>negative_squared_cross_mark</td>
+<td style="text-align:center">:curly_loop:</td>
+<td>curly_loop</td>
+</tr>
+<tr>
+<td style="text-align:center">:loop:</td>
+<td>loop</td>
+<td style="text-align:center">:part_alternation_mark:</td>
+<td>part_alternation_mark</td>
+</tr>
+<tr>
+<td style="text-align:center">:eight_spoked_asterisk:</td>
+<td>eight_spoked_asterisk</td>
+<td style="text-align:center">:eight_pointed_black_star:</td>
+<td>eight_pointed_black_star</td>
+</tr>
+<tr>
+<td style="text-align:center">:sparkle:</td>
+<td>sparkle</td>
+<td style="text-align:center">:copyright:</td>
+<td>copyright</td>
+</tr>
+<tr>
+<td style="text-align:center">:registered:</td>
+<td>registered</td>
+<td style="text-align:center">:tm:</td>
+<td>tm</td>
+</tr>
+</tbody>
+</table>
+<h2 id="flags">Flags</h2>
+<h3 id="common-flags">Common Flags</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:checkered_flag:</td>
+<td>checkered_flag</td>
+<td style="text-align:center">:triangular_flag_on_post:</td>
+<td>triangular_flag_on_post</td>
+</tr>
+<tr>
+<td style="text-align:center">:crossed_flags:</td>
+<td>crossed_flags</td>
+<td style="text-align:center">:black_flag:</td>
+<td>black_flag</td>
+</tr>
+<tr>
+<td style="text-align:center">:white_flag:</td>
+<td>white_flag</td>
+<td style="text-align:center">:rainbow_flag:</td>
+<td>rainbow_flag</td>
+</tr>
+</tbody>
+</table>
+<h3 id="country-and-region-flags">Country and Region Flags</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">icon</th>
+<th>code</th>
+<th style="text-align:center">icon</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">:andorra:</td>
+<td>andorra</td>
+<td style="text-align:center">:united_arab_emirates:</td>
+<td>united_arab_emirates</td>
+</tr>
+<tr>
+<td style="text-align:center">:afghanistan:</td>
+<td>afghanistan</td>
+<td style="text-align:center">:antigua_barbuda:</td>
+<td>antigua_barbuda</td>
+</tr>
+<tr>
+<td style="text-align:center">:anguilla:</td>
+<td>anguilla</td>
+<td style="text-align:center">:albania:</td>
+<td>albania</td>
+</tr>
+<tr>
+<td style="text-align:center">:armenia:</td>
+<td>armenia</td>
+<td style="text-align:center">:angola:</td>
+<td>angola</td>
+</tr>
+<tr>
+<td style="text-align:center">:antarctica:</td>
+<td>antarctica</td>
+<td style="text-align:center">:argentina:</td>
+<td>argentina</td>
+</tr>
+<tr>
+<td style="text-align:center">:american_samoa:</td>
+<td>american_samoa</td>
+<td style="text-align:center">:austria:</td>
+<td>austria</td>
+</tr>
+<tr>
+<td style="text-align:center">:australia:</td>
+<td>australia</td>
+<td style="text-align:center">:aruba:</td>
+<td>aruba</td>
+</tr>
+<tr>
+<td style="text-align:center">:aland_islands:</td>
+<td>aland_islands</td>
+<td style="text-align:center">:azerbaijan:</td>
+<td>azerbaijan</td>
+</tr>
+<tr>
+<td style="text-align:center">:bosnia_herzegovina:</td>
+<td>bosnia_herzegovina</td>
+<td style="text-align:center">:barbados:</td>
+<td>barbados</td>
+</tr>
+<tr>
+<td style="text-align:center">:bangladesh:</td>
+<td>bangladesh</td>
+<td style="text-align:center">:belgium:</td>
+<td>belgium</td>
+</tr>
+<tr>
+<td style="text-align:center">:burkina_faso:</td>
+<td>burkina_faso</td>
+<td style="text-align:center">:bulgaria:</td>
+<td>bulgaria</td>
+</tr>
+<tr>
+<td style="text-align:center">:bahrain:</td>
+<td>bahrain</td>
+<td style="text-align:center">:burundi:</td>
+<td>burundi</td>
+</tr>
+<tr>
+<td style="text-align:center">:benin:</td>
+<td>benin</td>
+<td style="text-align:center">:st_barthelemy:</td>
+<td>st_barthelemy</td>
+</tr>
+<tr>
+<td style="text-align:center">:bermuda:</td>
+<td>bermuda</td>
+<td style="text-align:center">:brunei:</td>
+<td>brunei</td>
+</tr>
+<tr>
+<td style="text-align:center">:bolivia:</td>
+<td>bolivia</td>
+<td style="text-align:center">:caribbean_netherlands:</td>
+<td>caribbean_netherlands</td>
+</tr>
+<tr>
+<td style="text-align:center">:brazil:</td>
+<td>brazil</td>
+<td style="text-align:center">:bahamas:</td>
+<td>bahamas</td>
+</tr>
+<tr>
+<td style="text-align:center">:bhutan:</td>
+<td>bhutan</td>
+<td style="text-align:center">:botswana:</td>
+<td>botswana</td>
+</tr>
+<tr>
+<td style="text-align:center">:belarus:</td>
+<td>belarus</td>
+<td style="text-align:center">:belize:</td>
+<td>belize</td>
+</tr>
+<tr>
+<td style="text-align:center">:canada:</td>
+<td>canada</td>
+<td style="text-align:center">:cocos_islands:</td>
+<td>cocos_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:congo_kinshasa:</td>
+<td>congo_kinshasa</td>
+<td style="text-align:center">:central_african_republic:</td>
+<td>central_african_republic</td>
+</tr>
+<tr>
+<td style="text-align:center">:congo_brazzaville:</td>
+<td>congo_brazzaville</td>
+<td style="text-align:center">:switzerland:</td>
+<td>switzerland</td>
+</tr>
+<tr>
+<td style="text-align:center">:cote_divoire:</td>
+<td>cote_divoire</td>
+<td style="text-align:center">:cook_islands:</td>
+<td>cook_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:chile:</td>
+<td>chile</td>
+<td style="text-align:center">:cameroon:</td>
+<td>cameroon</td>
+</tr>
+<tr>
+<td style="text-align:center">:cn:</td>
+<td>cn</td>
+<td style="text-align:center">:colombia:</td>
+<td>colombia</td>
+</tr>
+<tr>
+<td style="text-align:center">:costa_rica:</td>
+<td>costa_rica</td>
+<td style="text-align:center">:cuba:</td>
+<td>cuba</td>
+</tr>
+<tr>
+<td style="text-align:center">:cape_verde:</td>
+<td>cape_verde</td>
+<td style="text-align:center">:curacao:</td>
+<td>curacao</td>
+</tr>
+<tr>
+<td style="text-align:center">:christmas_island:</td>
+<td>christmas_island</td>
+<td style="text-align:center">:cyprus:</td>
+<td>cyprus</td>
+</tr>
+<tr>
+<td style="text-align:center">:czech_republic:</td>
+<td>czech_republic</td>
+<td style="text-align:center">:de:</td>
+<td>de</td>
+</tr>
+<tr>
+<td style="text-align:center">:djibouti:</td>
+<td>djibouti</td>
+<td style="text-align:center">:denmark:</td>
+<td>denmark</td>
+</tr>
+<tr>
+<td style="text-align:center">:dominica:</td>
+<td>dominica</td>
+<td style="text-align:center">:dominican_republic:</td>
+<td>dominican_republic</td>
+</tr>
+<tr>
+<td style="text-align:center">:algeria:</td>
+<td>algeria</td>
+<td style="text-align:center">:ecuador:</td>
+<td>ecuador</td>
+</tr>
+<tr>
+<td style="text-align:center">:estonia:</td>
+<td>estonia</td>
+<td style="text-align:center">:egypt:</td>
+<td>egypt</td>
+</tr>
+<tr>
+<td style="text-align:center">:western_sahara:</td>
+<td>western_sahara</td>
+<td style="text-align:center">:eritrea:</td>
+<td>eritrea</td>
+</tr>
+<tr>
+<td style="text-align:center">:es:</td>
+<td>es</td>
+<td style="text-align:center">:ethiopia:</td>
+<td>ethiopia</td>
+</tr>
+<tr>
+<td style="text-align:center">:eu:</td>
+<td>eu <!-- raw HTML omitted --> european_union</td>
+<td style="text-align:center">:finland:</td>
+<td>finland</td>
+</tr>
+<tr>
+<td style="text-align:center">:fiji:</td>
+<td>fiji</td>
+<td style="text-align:center">:falkland_islands:</td>
+<td>falkland_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:micronesia:</td>
+<td>micronesia</td>
+<td style="text-align:center">:faroe_islands:</td>
+<td>faroe_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:fr:</td>
+<td>fr</td>
+<td style="text-align:center">:gabon:</td>
+<td>gabon</td>
+</tr>
+<tr>
+<td style="text-align:center">:gb:</td>
+<td>gb <!-- raw HTML omitted --> uk</td>
+<td style="text-align:center">:grenada:</td>
+<td>grenada</td>
+</tr>
+<tr>
+<td style="text-align:center">:georgia:</td>
+<td>georgia</td>
+<td style="text-align:center">:french_guiana:</td>
+<td>french_guiana</td>
+</tr>
+<tr>
+<td style="text-align:center">:guernsey:</td>
+<td>guernsey</td>
+<td style="text-align:center">:ghana:</td>
+<td>ghana</td>
+</tr>
+<tr>
+<td style="text-align:center">:gibraltar:</td>
+<td>gibraltar</td>
+<td style="text-align:center">:greenland:</td>
+<td>greenland</td>
+</tr>
+<tr>
+<td style="text-align:center">:gambia:</td>
+<td>gambia</td>
+<td style="text-align:center">:guinea:</td>
+<td>guinea</td>
+</tr>
+<tr>
+<td style="text-align:center">:guadeloupe:</td>
+<td>guadeloupe</td>
+<td style="text-align:center">:equatorial_guinea:</td>
+<td>equatorial_guinea</td>
+</tr>
+<tr>
+<td style="text-align:center">:greece:</td>
+<td>greece</td>
+<td style="text-align:center">:south_georgia_south_sandwich_islands:</td>
+<td>south_georgia_south_sandwich_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:guatemala:</td>
+<td>guatemala</td>
+<td style="text-align:center">:guam:</td>
+<td>guam</td>
+</tr>
+<tr>
+<td style="text-align:center">:guinea_bissau:</td>
+<td>guinea_bissau</td>
+<td style="text-align:center">:guyana:</td>
+<td>guyana</td>
+</tr>
+<tr>
+<td style="text-align:center">:hong_kong:</td>
+<td>hong_kong</td>
+<td style="text-align:center">:honduras:</td>
+<td>honduras</td>
+</tr>
+<tr>
+<td style="text-align:center">:croatia:</td>
+<td>croatia</td>
+<td style="text-align:center">:haiti:</td>
+<td>haiti</td>
+</tr>
+<tr>
+<td style="text-align:center">:hungary:</td>
+<td>hungary</td>
+<td style="text-align:center">:canary_islands:</td>
+<td>canary_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:indonesia:</td>
+<td>indonesia</td>
+<td style="text-align:center">:ireland:</td>
+<td>ireland</td>
+</tr>
+<tr>
+<td style="text-align:center">:israel:</td>
+<td>israel</td>
+<td style="text-align:center">:isle_of_man:</td>
+<td>isle_of_man</td>
+</tr>
+<tr>
+<td style="text-align:center">:india:</td>
+<td>india</td>
+<td style="text-align:center">:british_indian_ocean_territory:</td>
+<td>british_indian_ocean_territory</td>
+</tr>
+<tr>
+<td style="text-align:center">:iraq:</td>
+<td>iraq</td>
+<td style="text-align:center">:iran:</td>
+<td>iran</td>
+</tr>
+<tr>
+<td style="text-align:center">:iceland:</td>
+<td>iceland</td>
+<td style="text-align:center">:it:</td>
+<td>it</td>
+</tr>
+<tr>
+<td style="text-align:center">:jersey:</td>
+<td>jersey</td>
+<td style="text-align:center">:jamaica:</td>
+<td>jamaica</td>
+</tr>
+<tr>
+<td style="text-align:center">:jordan:</td>
+<td>jordan</td>
+<td style="text-align:center">:jp:</td>
+<td>jp</td>
+</tr>
+<tr>
+<td style="text-align:center">:kenya:</td>
+<td>kenya</td>
+<td style="text-align:center">:kyrgyzstan:</td>
+<td>kyrgyzstan</td>
+</tr>
+<tr>
+<td style="text-align:center">:cambodia:</td>
+<td>cambodia</td>
+<td style="text-align:center">:kiribati:</td>
+<td>kiribati</td>
+</tr>
+<tr>
+<td style="text-align:center">:comoros:</td>
+<td>comoros</td>
+<td style="text-align:center">:st_kitts_nevis:</td>
+<td>st_kitts_nevis</td>
+</tr>
+<tr>
+<td style="text-align:center">:north_korea:</td>
+<td>north_korea</td>
+<td style="text-align:center">:kr:</td>
+<td>kr</td>
+</tr>
+<tr>
+<td style="text-align:center">:kuwait:</td>
+<td>kuwait</td>
+<td style="text-align:center">:cayman_islands:</td>
+<td>cayman_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:kazakhstan:</td>
+<td>kazakhstan</td>
+<td style="text-align:center">:laos:</td>
+<td>laos</td>
+</tr>
+<tr>
+<td style="text-align:center">:lebanon:</td>
+<td>lebanon</td>
+<td style="text-align:center">:st_lucia:</td>
+<td>st_lucia</td>
+</tr>
+<tr>
+<td style="text-align:center">:liechtenstein:</td>
+<td>liechtenstein</td>
+<td style="text-align:center">:sri_lanka:</td>
+<td>sri_lanka</td>
+</tr>
+<tr>
+<td style="text-align:center">:liberia:</td>
+<td>liberia</td>
+<td style="text-align:center">:lesotho:</td>
+<td>lesotho</td>
+</tr>
+<tr>
+<td style="text-align:center">:lithuania:</td>
+<td>lithuania</td>
+<td style="text-align:center">:luxembourg:</td>
+<td>luxembourg</td>
+</tr>
+<tr>
+<td style="text-align:center">:latvia:</td>
+<td>latvia</td>
+<td style="text-align:center">:libya:</td>
+<td>libya</td>
+</tr>
+<tr>
+<td style="text-align:center">:morocco:</td>
+<td>morocco</td>
+<td style="text-align:center">:monaco:</td>
+<td>monaco</td>
+</tr>
+<tr>
+<td style="text-align:center">:moldova:</td>
+<td>moldova</td>
+<td style="text-align:center">:montenegro:</td>
+<td>montenegro</td>
+</tr>
+<tr>
+<td style="text-align:center">:madagascar:</td>
+<td>madagascar</td>
+<td style="text-align:center">:marshall_islands:</td>
+<td>marshall_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:macedonia:</td>
+<td>macedonia</td>
+<td style="text-align:center">:mali:</td>
+<td>mali</td>
+</tr>
+<tr>
+<td style="text-align:center">:myanmar:</td>
+<td>myanmar</td>
+<td style="text-align:center">:mongolia:</td>
+<td>mongolia</td>
+</tr>
+<tr>
+<td style="text-align:center">:macau:</td>
+<td>macau</td>
+<td style="text-align:center">:northern_mariana_islands:</td>
+<td>northern_mariana_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:martinique:</td>
+<td>martinique</td>
+<td style="text-align:center">:mauritania:</td>
+<td>mauritania</td>
+</tr>
+<tr>
+<td style="text-align:center">:montserrat:</td>
+<td>montserrat</td>
+<td style="text-align:center">:malta:</td>
+<td>malta</td>
+</tr>
+<tr>
+<td style="text-align:center">:mauritius:</td>
+<td>mauritius</td>
+<td style="text-align:center">:maldives:</td>
+<td>maldives</td>
+</tr>
+<tr>
+<td style="text-align:center">:malawi:</td>
+<td>malawi</td>
+<td style="text-align:center">:mexico:</td>
+<td>mexico</td>
+</tr>
+<tr>
+<td style="text-align:center">:malaysia:</td>
+<td>malaysia</td>
+<td style="text-align:center">:mozambique:</td>
+<td>mozambique</td>
+</tr>
+<tr>
+<td style="text-align:center">:namibia:</td>
+<td>namibia</td>
+<td style="text-align:center">:new_caledonia:</td>
+<td>new_caledonia</td>
+</tr>
+<tr>
+<td style="text-align:center">:niger:</td>
+<td>niger</td>
+<td style="text-align:center">:norfolk_island:</td>
+<td>norfolk_island</td>
+</tr>
+<tr>
+<td style="text-align:center">:nigeria:</td>
+<td>nigeria</td>
+<td style="text-align:center">:nicaragua:</td>
+<td>nicaragua</td>
+</tr>
+<tr>
+<td style="text-align:center">:netherlands:</td>
+<td>netherlands</td>
+<td style="text-align:center">:norway:</td>
+<td>norway</td>
+</tr>
+<tr>
+<td style="text-align:center">:nepal:</td>
+<td>nepal</td>
+<td style="text-align:center">:nauru:</td>
+<td>nauru</td>
+</tr>
+<tr>
+<td style="text-align:center">:niue:</td>
+<td>niue</td>
+<td style="text-align:center">:new_zealand:</td>
+<td>new_zealand</td>
+</tr>
+<tr>
+<td style="text-align:center">:oman:</td>
+<td>oman</td>
+<td style="text-align:center">:panama:</td>
+<td>panama</td>
+</tr>
+<tr>
+<td style="text-align:center">:peru:</td>
+<td>peru</td>
+<td style="text-align:center">:french_polynesia:</td>
+<td>french_polynesia</td>
+</tr>
+<tr>
+<td style="text-align:center">:papua_new_guinea:</td>
+<td>papua_new_guinea</td>
+<td style="text-align:center">:philippines:</td>
+<td>philippines</td>
+</tr>
+<tr>
+<td style="text-align:center">:pakistan:</td>
+<td>pakistan</td>
+<td style="text-align:center">:poland:</td>
+<td>poland</td>
+</tr>
+<tr>
+<td style="text-align:center">:st_pierre_miquelon:</td>
+<td>st_pierre_miquelon</td>
+<td style="text-align:center">:pitcairn_islands:</td>
+<td>pitcairn_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:puerto_rico:</td>
+<td>puerto_rico</td>
+<td style="text-align:center">:palestinian_territories:</td>
+<td>palestinian_territories</td>
+</tr>
+<tr>
+<td style="text-align:center">:portugal:</td>
+<td>portugal</td>
+<td style="text-align:center">:palau:</td>
+<td>palau</td>
+</tr>
+<tr>
+<td style="text-align:center">:paraguay:</td>
+<td>paraguay</td>
+<td style="text-align:center">:qatar:</td>
+<td>qatar</td>
+</tr>
+<tr>
+<td style="text-align:center">:reunion:</td>
+<td>reunion</td>
+<td style="text-align:center">:romania:</td>
+<td>romania</td>
+</tr>
+<tr>
+<td style="text-align:center">:serbia:</td>
+<td>serbia</td>
+<td style="text-align:center">:ru:</td>
+<td>ru</td>
+</tr>
+<tr>
+<td style="text-align:center">:rwanda:</td>
+<td>rwanda</td>
+<td style="text-align:center">:saudi_arabia:</td>
+<td>saudi_arabia</td>
+</tr>
+<tr>
+<td style="text-align:center">:solomon_islands:</td>
+<td>solomon_islands</td>
+<td style="text-align:center">:seychelles:</td>
+<td>seychelles</td>
+</tr>
+<tr>
+<td style="text-align:center">:sudan:</td>
+<td>sudan</td>
+<td style="text-align:center">:sweden:</td>
+<td>sweden</td>
+</tr>
+<tr>
+<td style="text-align:center">:singapore:</td>
+<td>singapore</td>
+<td style="text-align:center">:st_helena:</td>
+<td>st_helena</td>
+</tr>
+<tr>
+<td style="text-align:center">:slovenia:</td>
+<td>slovenia</td>
+<td style="text-align:center">:slovakia:</td>
+<td>slovakia</td>
+</tr>
+<tr>
+<td style="text-align:center">:sierra_leone:</td>
+<td>sierra_leone</td>
+<td style="text-align:center">:san_marino:</td>
+<td>san_marino</td>
+</tr>
+<tr>
+<td style="text-align:center">:senegal:</td>
+<td>senegal</td>
+<td style="text-align:center">:somalia:</td>
+<td>somalia</td>
+</tr>
+<tr>
+<td style="text-align:center">:suriname:</td>
+<td>suriname</td>
+<td style="text-align:center">:south_sudan:</td>
+<td>south_sudan</td>
+</tr>
+<tr>
+<td style="text-align:center">:sao_tome_principe:</td>
+<td>sao_tome_principe</td>
+<td style="text-align:center">:el_salvador:</td>
+<td>el_salvador</td>
+</tr>
+<tr>
+<td style="text-align:center">:sint_maarten:</td>
+<td>sint_maarten</td>
+<td style="text-align:center">:syria:</td>
+<td>syria</td>
+</tr>
+<tr>
+<td style="text-align:center">:swaziland:</td>
+<td>swaziland</td>
+<td style="text-align:center">:turks_caicos_islands:</td>
+<td>turks_caicos_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:chad:</td>
+<td>chad</td>
+<td style="text-align:center">:french_southern_territories:</td>
+<td>french_southern_territories</td>
+</tr>
+<tr>
+<td style="text-align:center">:togo:</td>
+<td>togo</td>
+<td style="text-align:center">:thailand:</td>
+<td>thailand</td>
+</tr>
+<tr>
+<td style="text-align:center">:tajikistan:</td>
+<td>tajikistan</td>
+<td style="text-align:center">:tokelau:</td>
+<td>tokelau</td>
+</tr>
+<tr>
+<td style="text-align:center">:timor_leste:</td>
+<td>timor_leste</td>
+<td style="text-align:center">:turkmenistan:</td>
+<td>turkmenistan</td>
+</tr>
+<tr>
+<td style="text-align:center">:tunisia:</td>
+<td>tunisia</td>
+<td style="text-align:center">:tonga:</td>
+<td>tonga</td>
+</tr>
+<tr>
+<td style="text-align:center">:tr:</td>
+<td>tr</td>
+<td style="text-align:center">:trinidad_tobago:</td>
+<td>trinidad_tobago</td>
+</tr>
+<tr>
+<td style="text-align:center">:tuvalu:</td>
+<td>tuvalu</td>
+<td style="text-align:center">:taiwan:</td>
+<td>taiwan</td>
+</tr>
+<tr>
+<td style="text-align:center">:tanzania:</td>
+<td>tanzania</td>
+<td style="text-align:center">:ukraine:</td>
+<td>ukraine</td>
+</tr>
+<tr>
+<td style="text-align:center">:uganda:</td>
+<td>uganda</td>
+<td style="text-align:center">:us:</td>
+<td>us</td>
+</tr>
+<tr>
+<td style="text-align:center">:uruguay:</td>
+<td>uruguay</td>
+<td style="text-align:center">:uzbekistan:</td>
+<td>uzbekistan</td>
+</tr>
+<tr>
+<td style="text-align:center">:vatican_city:</td>
+<td>vatican_city</td>
+<td style="text-align:center">:st_vincent_grenadines:</td>
+<td>st_vincent_grenadines</td>
+</tr>
+<tr>
+<td style="text-align:center">:venezuela:</td>
+<td>venezuela</td>
+<td style="text-align:center">:british_virgin_islands:</td>
+<td>british_virgin_islands</td>
+</tr>
+<tr>
+<td style="text-align:center">:us_virgin_islands:</td>
+<td>us_virgin_islands</td>
+<td style="text-align:center">:vietnam:</td>
+<td>vietnam</td>
+</tr>
+<tr>
+<td style="text-align:center">:vanuatu:</td>
+<td>vanuatu</td>
+<td style="text-align:center">:wallis_futuna:</td>
+<td>wallis_futuna</td>
+</tr>
+<tr>
+<td style="text-align:center">:samoa:</td>
+<td>samoa</td>
+<td style="text-align:center">:kosovo:</td>
+<td>kosovo</td>
+</tr>
+<tr>
+<td style="text-align:center">:yemen:</td>
+<td>yemen</td>
+<td style="text-align:center">:mayotte:</td>
+<td>mayotte</td>
+</tr>
+<tr>
+<td style="text-align:center">:south_africa:</td>
+<td>south_africa</td>
+<td style="text-align:center">:zambia:</td>
+<td>zambia</td>
+</tr>
+<tr>
+<td style="text-align:center">:zimbabwe:</td>
+<td>zimbabwe</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="topFunction()" title="Go to top">
+        
+        <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+    </svg>
+    <script>
+        let backToTopButton = document.getElementById("btt-button");
+
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            smoothScrollToTop();
+        }
+
+        function smoothScrollToTop() {
+            const scrollToTop = () => {
+                const c = document.documentElement.scrollTop || document.body.scrollTop;
+                if (c > 0) {
+                    window.requestAnimationFrame(scrollToTop);
+                    window.scrollTo(0, c - c / 8);
+                }
+            };
+            scrollToTop();
+        }
+    </script>
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#smileys--emotion">Smileys &amp; Emotion</a>
+      <ul>
+        <li><a href="#face-smiling">Face Smiling</a></li>
+        <li><a href="#face-affection">Face Affection</a></li>
+        <li><a href="#face-tongue">Face Tongue</a></li>
+        <li><a href="#face-hand">Face Hand</a></li>
+        <li><a href="#face-neutral-skeptical">Face Neutral Skeptical</a></li>
+        <li><a href="#face-sleepy">Face Sleepy</a></li>
+        <li><a href="#face-unwell">Face Unwell</a></li>
+        <li><a href="#face-hat">Face Hat</a></li>
+        <li><a href="#face-glasses">Face Glasses</a></li>
+        <li><a href="#face-concerned">Face Concerned</a></li>
+        <li><a href="#face-negative">Face Negative</a></li>
+        <li><a href="#face-costume">Face Costume</a></li>
+        <li><a href="#cat-face">Cat Face</a></li>
+        <li><a href="#monkey-face">Monkey Face</a></li>
+        <li><a href="#emotion">Emotion</a></li>
+      </ul>
+    </li>
+    <li><a href="#people--body">People &amp; Body</a>
+      <ul>
+        <li><a href="#hand-fingers-open">Hand Fingers Open</a></li>
+        <li><a href="#hand-fingers-partial">Hand Fingers Partial</a></li>
+        <li><a href="#hand-single-finger">Hand Single Finger</a></li>
+        <li><a href="#hand-fingers-closed">Hand Fingers Closed</a></li>
+        <li><a href="#hands">Hands</a></li>
+        <li><a href="#hand-prop">Hand Prop</a></li>
+        <li><a href="#body-parts">Body Parts</a></li>
+        <li><a href="#person">Person</a></li>
+        <li><a href="#person-gesture">Person Gesture</a></li>
+        <li><a href="#person-role">Person Role</a></li>
+        <li><a href="#person-fantasy">Person Fantasy</a></li>
+        <li><a href="#person-activity">Person Activity</a></li>
+        <li><a href="#person-sport">Person Sport</a></li>
+        <li><a href="#person-resting">Person Resting</a></li>
+        <li><a href="#family">Family</a></li>
+        <li><a href="#person-symbol">Person Symbol</a></li>
+      </ul>
+    </li>
+    <li><a href="#animals--nature">Animals &amp; Nature</a>
+      <ul>
+        <li><a href="#animal-mammal">Animal Mammal</a></li>
+        <li><a href="#animal-bird">Animal Bird</a></li>
+        <li><a href="#animal-amphibian">Animal Amphibian</a></li>
+        <li><a href="#animal-reptile">Animal Reptile</a></li>
+        <li><a href="#animal-marine">Animal Marine</a></li>
+        <li><a href="#animal-bug">Animal Bug</a></li>
+        <li><a href="#plant-flower">Plant Flower</a></li>
+        <li><a href="#plant-other">Plant Other</a></li>
+      </ul>
+    </li>
+    <li><a href="#food--drink">Food &amp; Drink</a>
+      <ul>
+        <li><a href="#food-fruit">Food Fruit</a></li>
+        <li><a href="#food-vegetable">Food Vegetable</a></li>
+        <li><a href="#food-prepared">Food Prepared</a></li>
+        <li><a href="#food-asian">Food Asian</a></li>
+        <li><a href="#food-marine">Food Marine</a></li>
+        <li><a href="#food-sweet">Food Sweet</a></li>
+        <li><a href="#drink">Drink</a></li>
+        <li><a href="#dishware">Dishware</a></li>
+      </ul>
+    </li>
+    <li><a href="#travel--places">Travel &amp; Places</a>
+      <ul>
+        <li><a href="#place-map">Place Map</a></li>
+        <li><a href="#place-geographic">Place Geographic</a></li>
+        <li><a href="#place-building">Place Building</a></li>
+        <li><a href="#place-religious">Place Religious</a></li>
+        <li><a href="#place-other">Place Other</a></li>
+        <li><a href="#transport-ground">Transport Ground</a></li>
+        <li><a href="#transport-water">Transport Water</a></li>
+        <li><a href="#transport-air">Transport Air</a></li>
+        <li><a href="#hotel">Hotel</a></li>
+        <li><a href="#time">Time</a></li>
+        <li><a href="#sky--weather">Sky &amp; Weather</a></li>
+      </ul>
+    </li>
+    <li><a href="#activities">Activities</a>
+      <ul>
+        <li><a href="#event">Event</a></li>
+        <li><a href="#award-medal">Award Medal</a></li>
+        <li><a href="#sport">Sport</a></li>
+        <li><a href="#game">Game</a></li>
+        <li><a href="#arts--crafts">Arts &amp; Crafts</a></li>
+      </ul>
+    </li>
+    <li><a href="#objects">Objects</a>
+      <ul>
+        <li><a href="#clothing">Clothing</a></li>
+        <li><a href="#sound">Sound</a></li>
+        <li><a href="#music">Music</a></li>
+        <li><a href="#musical-instrument">Musical Instrument</a></li>
+        <li><a href="#phone">Phone</a></li>
+        <li><a href="#computer">Computer</a></li>
+        <li><a href="#light--video">Light &amp; Video</a></li>
+        <li><a href="#book-paper">Book Paper</a></li>
+        <li><a href="#money">Money</a></li>
+        <li><a href="#mail">Mail</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#office">Office</a></li>
+        <li><a href="#lock">Lock</a></li>
+        <li><a href="#tool">Tool</a></li>
+        <li><a href="#science">Science</a></li>
+        <li><a href="#medical">Medical</a></li>
+        <li><a href="#household">Household</a></li>
+        <li><a href="#other-object">Other Object</a></li>
+      </ul>
+    </li>
+    <li><a href="#symbols">Symbols</a>
+      <ul>
+        <li><a href="#transport-sign">Transport Sign</a></li>
+        <li><a href="#warning">Warning</a></li>
+        <li><a href="#arrow">Arrow</a></li>
+        <li><a href="#religion">Religion</a></li>
+        <li><a href="#zodiac">Zodiac</a></li>
+        <li><a href="#av-symbol">Av Symbol</a></li>
+        <li><a href="#math">Math</a></li>
+        <li><a href="#punctuation">Punctuation</a></li>
+        <li><a href="#currency">Currency</a></li>
+        <li><a href="#keycap">Keycap</a></li>
+        <li><a href="#alphabet">Alphabet</a></li>
+        <li><a href="#geometric">Geometric</a></li>
+        <li><a href="#other-symbol">Other Symbol</a></li>
+      </ul>
+    </li>
+    <li><a href="#flags">Flags</a>
+      <ul>
+        <li><a href="#common-flags">Common Flags</a></li>
+        <li><a href="#country-and-region-flags">Country and Region Flags</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 AnthoLaMalice</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

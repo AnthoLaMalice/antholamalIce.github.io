@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Forensics on AnthoLaMalice</title>
+    <link>http://localhost:1313/tags/forensics/</link>
+    <description>Recent content in Forensics on AnthoLaMalice</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-be</language>
+    <lastBuildDate>Thu, 23 May 2024 21:14:38 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thumbcache Windows Forensic Artifact</title>
+      <link>http://localhost:1313/posts/thumbcache/</link>
+      <pubDate>Thu, 23 May 2024 21:14:38 +0200</pubDate>
+      <guid>http://localhost:1313/posts/thumbcache/</guid>
+      <description>Theory These files represent the preview that we see in the file explorer when we want to open a file. For example, we can see preview of images or PDFs as it can be seen there ![[Pasted image 20230606183149.png]] Here are other examples ![[Pasted image 20230606183513.png]]&#xA;Thumbs.db Created for Windows Vista, not used anymore but can still be present&#xA;Thumbcache_&amp;lt;resolution&amp;gt;.db These are the actual artifact files that can be found and investigated on modern systems.</description>
+    </item>
+  </channel>
+</rss>

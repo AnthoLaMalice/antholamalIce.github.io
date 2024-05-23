@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Thumbcache Windows Forensic Artifact</title>
+    <meta name="description" content="Forensic/SOC Analyst - CTF Player">
+    <meta name="keywords" content='blog, gokarna, hugo, Windows Forensics, DFIR, Forensics, Artifact'>
+
+    <meta property="og:url" content="http://localhost:1313/posts/thumbcache/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thumbcache Windows Forensic Artifact">
+    <meta property="og:description" content="Forensic/SOC Analyst - CTF Player">
+    <meta property="og:image" content="http://localhost:1313/images/lorem-ipsum/quick-fox.png">
+    <meta property="og:image:secure_url" content="http://localhost:1313/images/lorem-ipsum/quick-fox.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thumbcache Windows Forensic Artifact">
+    <meta name="twitter:description" content="Forensic/SOC Analyst - CTF Player">
+    <meta property="twitter:domain" content="http://localhost:1313/posts/thumbcache/">
+    <meta property="twitter:url" content="http://localhost:1313/posts/thumbcache/">
+    <meta name="twitter:image" content="http://localhost:1313/images/lorem-ipsum/quick-fox.png">
+
+    
+    <link rel="canonical" href="http://localhost:1313/posts/thumbcache/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/css/dark.min.css">
+
+    
+    <script src="/js/bundle.min.42cd59fad5e45cfa0166df8a623922b01c15e00142e983fbc2d2d70da653b1d6.js" integrity="sha256-Qs1Z&#43;tXkXPoBZt&#43;KYjkisBwV4AFC6YP7wtLXDaZTsdY="></script>
+
+    
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="http://localhost:1313/">
+                <img src='https://i.pinimg.com/736x/a7/5c/e2/a75ce27328e4be489e4b6f1d89332a8e.jpg' alt="avatar">
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="http://localhost:1313/">AnthoLaMalice</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/whoami/"><span data-feather='at-sign'></span> Whoami </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="http://localhost:1313/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/whoami/"><span data-feather='at-sign'></span> Whoami </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="http://localhost:1313/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Thumbcache Windows Forensic Artifact</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">May 23, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/windows-forensics">Windows Forensics</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/dfir">DFIR</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/forensics">Forensics</a></li>
+        
+            <li class="post-tag"><a href="http://localhost:1313/tags/artifact">Artifact</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h1 id="theory">Theory</h1>
+<p>The purpose of this artifact is to analyze the previews that we see in the file explorer when we want to open a file.
+For example, we can see previews of images or PDFs as it can be seen there : <img src="../ImagePreview.png" alt="Preview"></p>
+<p>A database file containing the preview exists for each user that already logged on the system.</p>
+<h2 id="thumbsdb">Thumbs.db</h2>
+<p>Created for Windows Vista, not used anymore.</p>
+<h2 id="thumbcache_resolutiondb">Thumbcache_&lt;resolution&gt;.db</h2>
+<p>These are the actual artifact files that can be found and investigated on modern systems.
+Path : <code>C:\Users\&lt;username&gt;\AppData\Local\Microsoft\Windows\Explorer</code></p>
+<p>Thumbcache IDs and hashes are stored in the Thumbcache database and can be used to map the path of the source images; this is usually done by scanning files across the same source system and comparing the hashses or via matching the System.ThumbnailCacheId with the Windows Search (Windows.edb) database</p>
+<p>==Thumbnails can be useful for identification of files no longer present on the system as they stay there even when the file is deleted.==</p>
+<h1 id="summary">Summary</h1>
+<p>![[Pasted image 20230606190356.png]]</p>
+<h1 id="analysis">Analysis</h1>
+<p>Thumbnails can be analyzed with the following tool
+<a href="https://thumbcacheviewer.github.io/">https://thumbcacheviewer.github.io/</a></p>
+<pre><code>After browing to the artifact directory : `C:\Users\Anthony\AppData\Local\Microsoft\Windows\Explorer`, we can see that a lot of DB files are present. Between all of them, we can see that some have higher size than the others. These will contain more cached images. However, the number depends on the original resolution of the images. All of them might be worth to inspect to have a complete overview of what Thumbnails images have been cached.
+</code></pre>
+<p>![[Pasted image 20230606184231.png]]
+Let&rsquo;s open the bigger one in Thumbcache viewer (thumbcache_96.db)
+Once opened in Thumbcache viewer, we have a list of all the cached images of that size with random names.
+![[Pasted image 20230606184833.png]]
+However, by clicking on them, we can see all the images, even the first image I put there :D
+![[Pasted image 20230606184909.png]]
+It is now possible to save this image as an IoC if we for example saw the icon of Mimikatz.
+![[Pasted image 20230606185037.png]]
+But now, how do we know the original file path location?
+As stated before, metadata related to the Thumbnail image are stored within the Thumbcache database. These can be used to sometimes retrieve the original path of the image.
+Thumbcache viewer is again capable of doing it for us.
+Let&rsquo;s click on <code>Tools</code> and then <code>Map File Paths</code>
+![[Pasted image 20230606185247.png]]
+There, we need to chose which path is going to be scanned to map the cached image with the original image. There, I choose my most used disk.
+![[Pasted image 20230606185354.png]]</p>
+<p>7 files were mapped correctly with the content present on the disk.
+![[Pasted image 20230606185449.png]]
+Now, we can see what was the original name of the first picture :
+![[Pasted image 20230606185519.png]]
+Of course, this File mapping option won&rsquo;t work if the files are not present anymore on the disk due to the way it works with comparating the hashes of the files within the folders with the hashes of the tumbnail files.</p>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="topFunction()" title="Go to top">
+        
+        <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+    </svg>
+    <script>
+        let backToTopButton = document.getElementById("btt-button");
+
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            smoothScrollToTop();
+        }
+
+        function smoothScrollToTop() {
+            const scrollToTop = () => {
+                const c = document.documentElement.scrollTop || document.body.scrollTop;
+                if (c > 0) {
+                    window.requestAnimationFrame(scrollToTop);
+                    window.scrollTo(0, c - c / 8);
+                }
+            };
+            scrollToTop();
+        }
+    </script>
+    
+    
+</div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#thumbsdb">Thumbs.db</a></li>
+    <li><a href="#thumbcache_resolutiondb">Thumbcache_&lt;resolution&gt;.db</a></li>
+  </ul>
+</nav>
+    </nav>
+</aside>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+    <span>&copy; 2024 AnthoLaMalice</span>
+    
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
