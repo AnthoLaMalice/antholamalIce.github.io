@@ -2,29 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/whoami/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/whoami/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/</loc>
     <lastmod>2023-12-15T23:39:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/citrix/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/tags/citrix/</loc>
     <lastmod>2023-12-15T23:39:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cve-2023-4966/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/tags/cve-2023-4966/</loc>
     <lastmod>2023-12-15T23:39:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/citrixbleedanalysis/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/posts/citrixbleedanalysis/</loc>
     <lastmod>2023-12-15T23:39:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dfir/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/tags/dfir/</loc>
     <lastmod>2023-12-15T23:39:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/posts/</loc>
     <lastmod>2023-12-15T23:39:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/tags/</loc>
     <lastmod>2023-12-15T23:39:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/antholamalice.github.io/categories/</loc>
   </url>
 </urlset>

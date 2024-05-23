@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Citrix on AnthoLaMalice</title>
-    <link>http://localhost:1313/tags/citrix/</link>
+    <link>http://localhost:1313/antholamalice.github.io/tags/citrix/</link>
     <description>Recent content in Citrix on AnthoLaMalice</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-be</language>
     <lastBuildDate>Fri, 15 Dec 2023 23:39:49 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/citrix/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/antholamalice.github.io/tags/citrix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CVE-2023-4966 Citrix Bleed Analysis</title>
-      <link>http://localhost:1313/posts/citrixbleedanalysis/</link>
+      <link>http://localhost:1313/antholamalice.github.io/posts/citrixbleedanalysis/</link>
       <pubDate>Fri, 15 Dec 2023 23:39:49 +0530</pubDate>
-      <guid>http://localhost:1313/posts/citrixbleedanalysis/</guid>
+      <guid>http://localhost:1313/antholamalice.github.io/posts/citrixbleedanalysis/</guid>
       <description>Introduction At the end of November 2023, I conducted a Forensic analysis in an environment which was completely encrypted by the Lockbit 3.0 ransomware. During the investigation, it was quickly possible to identify that Citrix components were the sources of most of the attacks. As many different sources report that Lockbit 3.0 likes to take advantage of the Citrix Bleed vulnerability (CVE 2023-4966), I decided to check whether it could be behind the attack, given that a Citrix NetScaler was facing the internet in the environment.</description>
     </item>
   </channel>
